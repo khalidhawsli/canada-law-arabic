@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Canada Law in Arabic — قانون كندا بالعربي</title>
 <style>
   * {
@@ -11,9 +11,9 @@
     box-sizing: border-box;
   }
   body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: #FFFFFF;
-    color: #1e2a3e;
+    color: #1e293b;
     line-height: 1.5;
   }
   .container {
@@ -24,14 +24,13 @@
   section {
     padding: 80px 0;
   }
-  /* colors */
   :root {
     --blue-dark: #0B2B5C;
     --blue: #1E3A6F;
     --red: #C4281C;
     --red-bright: #E03A2E;
-    --gray-light: #F4F6F9;
-    --gray-mid: #5A6874;
+    --gray-light: #F8FAFE;
+    --gray-mid: #64748B;
     --white: #FFFFFF;
   }
   .bg-dark { background: var(--blue-dark); color: white; }
@@ -61,14 +60,14 @@
   }
   .btn-outline-light:hover { border-color: white; }
   .badge-coming {
-    background: #e9ecef;
-    color: #5a6874;
+    background: #e2e8f0;
+    color: #475569;
     font-size: 11px;
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 600;
+    display: inline-block;
   }
-  /* header */
   nav {
     position: fixed;
     top: 0;
@@ -109,7 +108,6 @@
     border-radius: 40px;
     color: white;
   }
-  /* hero */
   .hero {
     padding-top: 120px;
     background: linear-gradient(135deg, #0B2B5C 0%, #12376E 100%);
@@ -123,19 +121,17 @@
   }
   .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
   .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
-  .hero-ar { direction: rtl; text-align: right; font-family: 'Segoe UI', 'Tajawal', system-ui; }
+  .hero-ar { direction: rtl; text-align: right; font-family: 'Tajawal', system-ui; }
   .hero-ar h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-  /* stats */
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     background: var(--blue);
     color: white;
     text-align: center;
     padding: 32px 0;
   }
   .stat-number { font-size: 2.5rem; font-weight: 800; }
-  /* pillars grid */
   .pillars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
@@ -148,11 +144,9 @@
     background: white;
     padding: 24px 16px;
     text-align: center;
-    transition: all 0.2s;
   }
   .pillar-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
   .pillar-card .ar { font-family: 'Tajawal', system-ui; font-size: 0.85rem; color: #5a6874; }
-  /* guides grid */
   .guides-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
@@ -165,12 +159,9 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     padding: 20px;
     border: 1px solid #eef2f6;
-    transition: 0.2s;
   }
   .guide-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
   .guide-card .ar-title { font-family: 'Tajawal', system-ui; font-size: 0.9rem; color: #5a6874; margin-bottom: 12px; }
-  .guide-status { margin-top: 16px; }
-  /* course & power series */
   .two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -182,7 +173,39 @@
     padding: 32px;
     border-top: 4px solid var(--red);
   }
-  /* footer */
+  .subscribe-guide {
+    background: #F1F5F9;
+    border-radius: 32px;
+    padding: 40px;
+    margin-top: 48px;
+    text-align: center;
+  }
+  .subscribe-guide h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .subscribe-guide .ar {
+    font-family: 'Tajawal';
+    font-size: 1.3rem;
+    color: #475569;
+    margin-bottom: 16px;
+  }
+  .subscribe-guide p {
+    color: #334155;
+    margin-bottom: 24px;
+  }
+  .subscribe-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .subscribe-form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 40px;
+    font-size: 1rem;
+  }
   footer {
     background: #0F172A;
     color: #94a3b8;
@@ -193,6 +216,7 @@
     .hero-grid, .two-columns { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
     .nav-links { display: none; }
+    .subscribe-guide { padding: 24px; }
   }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -211,7 +235,7 @@
       <a href="#guides">Guides</a>
       <a href="#course">Course</a>
       <a href="#power-series">Power Series</a>
-      <a href="#newsletter" class="nav-cta">Subscribe</a>
+      <a href="#subscribe-form" class="nav-cta">Subscribe</a>
     </div>
   </div>
 </nav>
@@ -237,6 +261,7 @@
 <div class="stats-grid">
   <div><div class="stat-number">400+</div><div>Reels</div></div>
   <div><div class="stat-number">12</div><div>Legal areas</div></div>
+  <div><div class="stat-number">20+</div><div>Guides</div></div>
   <div><div class="stat-number">8+</div><div>Course units</div></div>
   <div><div class="stat-number">600K+</div><div>Arabic speakers in Canada</div></div>
 </div>
@@ -288,36 +313,57 @@
 <section id="guides">
   <div class="container">
     <div style="text-align: center; margin-bottom: 32px;">
-      <h2 style="font-size: 2rem;">20+ video + PDF guides (coming soon)</h2>
-      <p style="color: #5a6874;">أدلة جديدة بالصوت والصورة والكتاب – قريباً</p>
+      <h2 style="font-size: 2rem;">Video + PDF guides (20+ in total)</h2>
+      <p style="color: #5a6874;">أدلة بالصوت والصورة والكتاب – أكثر من ٢٠ دليلاً</p>
     </div>
+
+    <!-- Only 4 example guides -->
     <div class="guides-grid">
-      <!-- Criminal Law (5) -->
-      <div class="guide-card"><h3>Arrested? 7 Things You Must Say</h3><div class="ar-title">اعتقال؟ ٧ أشياء يجب أن تقولها</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Bail & Release: Get Out of Jail Fast</h3><div class="ar-title">الكفالة والإفراج: اخرج بسرعة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Criminal Record: Seal It or Pardon</h3><div class="ar-title">السجل الجنائي: إغلاقه أو العفو</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Police Search: Warrant or Not?</h3><div class="ar-title">تفتيش الشرطة: مذكرة أم لا؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Legal Aid for Criminal Cases</h3><div class="ar-title">المساعدة القانونية للقضايا الجنائية</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <!-- Business (6) -->
-      <div class="guide-card"><h3>Sole Prop vs. Corporation – Tax</h3><div class="ar-title">الملكية الفردية أم الشركة؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Shareholder Agreement – 5 Clauses</h3><div class="ar-title">اتفاقية المساهمين – ٥ بنود</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Business Contracts – Template</h3><div class="ar-title">العقود التجارية – نموذج</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Hiring Employees – Legal Traps</h3><div class="ar-title">توظيف الموظفين – فخاخ قانونية</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Liability Insurance – How Much?</h3><div class="ar-title">تأمين المسؤولية – كم يكفي؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Closing a Business – Debts & Taxes</h3><div class="ar-title">إغلاق عمل – ديون وضرائب</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <!-- Marketing & Advertising (4) -->
-      <div class="guide-card"><h3>False Advertising – Costly Words</h3><div class="ar-title">الإعلانات المضللة – كلمات مكلفة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Email Marketing – Legal Rules</h3><div class="ar-title">التسويق الإلكتروني – قواعد قانونية</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Customer Photos – Permission Needed</h3><div class="ar-title">صور العملاء – هل تحتاج إذناً؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Contests & Giveaways – Legal Rules</h3><div class="ar-title">المسابقات والهدايا – قانونياً</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <!-- Taxation (5) -->
-      <div class="guide-card"><h3>Tax Filing – Deadlines & Deductions</h3><div class="ar-title">تقديم الضرائب – مواعيد وخصومات</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>RRSP vs. TFSA – Which Saves Tax?</h3><div class="ar-title">RRSP أم TFSA – أيهما أفضل؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Self‑Employed Tax Deductions</h3><div class="ar-title">خصومات ضريبية للأعمال الحرة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>HST/GST for Small Business</h3><div class="ar-title">HST/GST للشركات الصغيرة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
-      <div class="guide-card"><h3>Tax Debt – Payment Plans & Relief</h3><div class="ar-title">الديون الضريبية – خطط الدفع</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card">
+        <h3>Arrested? 7 Things You Must Say</h3>
+        <div class="ar-title">اعتقال؟ ٧ أشياء يجب أن تقولها</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+      </div>
+      <div class="guide-card">
+        <h3>Start a Business: Sole Prop vs. Corporation</h3>
+        <div class="ar-title">الملكية الفردية أم الشركة؟</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+      </div>
+      <div class="guide-card">
+        <h3>Tax Filing – Deadlines & Deductions</h3>
+        <div class="ar-title">تقديم الضرائب – مواعيد وخصومات</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+      </div>
+      <div class="guide-card">
+        <h3>Police Search: Warrant or Not?</h3>
+        <div class="ar-title">تفتيش الشرطة: مذكرة أم لا؟</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+      </div>
     </div>
-    <p style="text-align: center; margin-top: 32px; color: #5a6874;">Subscribe to receive each PDF guide as soon as it’s released — اشترك ليصلك كل دليل فور صدوره</p>
+
+    <!-- Plus 20+ more guides message -->
+    <div style="text-align: center; margin-top: 40px; padding: 32px; background: #F1F5F9; border-radius: 24px;">
+      <p style="font-size: 1.1rem; font-weight: 500;">Plus 20+ more video+PDF guides in progress</p>
+      <p style="color: #475569; margin: 8px 0 16px;">Criminal law, business, marketing, taxation, and more – all free.</p>
+    </div>
+
+    <!-- NEWSLETTER FORM DIRECTLY UNDER GUIDES (moved here) -->
+    <div class="subscribe-guide" id="subscribe-form">
+      <h3>Get all guides free — one per month</h3>
+      <div class="ar">احصل على جميع الأدلة مجاناً — دليل كل شهر</div>
+      <p>Subscribe to receive free PDF guides, early access to new workshops, and a monthly newsletter. One guide every month. No spam.</p>
+      <div class="subscribe-form">
+        <input type="text" placeholder="Your name | اسمك">
+        <input type="email" placeholder="Email | البريد الإلكتروني">
+        <button class="btn-primary" style="width: 100%;" onclick="alert('Demo: your email would be saved. No backend yet.')">Subscribe Free | اشترك مجاناً</button>
+        <p style="font-size: 12px; margin-top: 12px; color: #5a6874;">Free · No spam · Unsubscribe anytime | مجاني · لا بريد مزعج · إلغاء في أي وقت</p>
+        <p style="margin-top: 16px; font-weight: 500;">📺 Be the first to watch the video and download the PDF guide | كن أول من يشاهد الفيديو ويحمل الدليل</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -344,7 +390,7 @@
           <div><span style="font-size: 2rem; font-weight: 800; color: var(--red);">8+</span><br>وحدات</div>
           <div><span style="font-size: 2rem; font-weight: 800; color: var(--red);">$0</span><br>مجاناً</div>
         </div>
-        <a href="#newsletter" class="btn-primary" style="float: right;">سجّل للوصول المجاني</a>
+        <a href="#subscribe-form" class="btn-primary" style="float: right;">سجّل للوصول المجاني</a>
         <div style="clear: both;"></div>
       </div>
     </div>
@@ -359,31 +405,13 @@
         <h2 style="font-size: 2rem; margin: 16px 0;">From Home to Parliament — من البيت إلى البرلمان</h2>
         <p>A new video series teaching Arabic‑speaking Canadians how to build real political power. Learn how federal, provincial, and municipal elections work. How to register voters, organize get‑out‑the‑vote drives, pressure elected officials, file human rights complaints, and even run for office.</p>
         <p style="margin-top: 16px;">Coming 2026 – free on YouTube, in Arabic with English subtitles.</p>
-        <a href="#newsletter" class="btn-primary" style="margin-top: 24px; display: inline-block;">Notify me when launched</a>
+        <a href="#subscribe-form" class="btn-primary" style="margin-top: 24px; display: inline-block;">Notify me when launched</a>
       </div>
       <div class="dark-card">
         <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; margin-bottom: 16px;">من البيت إلى البرلمان</h3>
         <p style="font-family: 'Tajawal'; line-height: 1.7; opacity: 0.9;">سلسلة فيديوهات جديدة لتعليم الجاليات العربية في كندا كيفية بناء القوة السياسية. تعرّف على الانتخابات، نظّم حملات تسجيل الناخبين، اكتشف حقوقك، وترشح للمناصب.</p>
-        <a href="#newsletter" class="btn-primary" style="float: right; margin-top: 16px;">أخبرني عند الإطلاق</a>
+        <a href="#subscribe-form" class="btn-primary" style="float: right; margin-top: 16px;">أخبرني عند الإطلاق</a>
         <div style="clear: both;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="newsletter">
-  <div class="container">
-    <div class="two-columns" style="align-items: center;">
-      <div>
-        <h2 style="font-size: 1.8rem;">Get all guides free — one per month</h2>
-        <p style="font-family: 'Tajawal'; font-size: 1.2rem; margin: 8px 0;">احصل على جميع الأدلة مجاناً — دليل كل شهر</p>
-        <p>Subscribe to receive free PDF guides, early access to new workshops, and a monthly newsletter. One guide every month. No spam.</p>
-      </div>
-      <div>
-        <input type="text" placeholder="Your name" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 40px;">
-        <input type="email" placeholder="Email" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 40px;">
-        <button class="btn-primary" style="width: 100%;" onclick="alert('Demo: your email would be saved. No backend yet.')">Subscribe Free</button>
-        <p style="font-size: 12px; margin-top: 12px; color: #5a6874;">Free · No spam · Unsubscribe anytime</p>
       </div>
     </div>
   </div>
