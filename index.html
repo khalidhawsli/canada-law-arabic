@@ -2,700 +2,435 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Free Arabic-language legal education for Arabic-speaking Canadians. قانون كندا بالعربي — التثقيف القانوني المجاني للمجتمع العربي في كندا.">
-<meta property="og:title" content="Canada Law in Arabic — قانون كندا بالعربي">
-<meta property="og:description" content="Free legal education for Arabic-speaking Canadians. Family law, tenancy, employment, real estate, accidents & more.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Canada Law in Arabic — قانون كندا بالعربي</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow:wght@400;500;600;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --blue:    #3F3FA0;
-  --blue-dk: #2D2D7A;
-  --blue-lt: #EEEEF8;
-  --blue-md: #5252B8;
-  --red:     #E8000A;
-  --red-dk:  #B50008;
-  --red-lt:  #FEF0F0;
-  --white:   #FFFFFF;
-  --cream:   #F8F7F4;
-  --warm:    #F0EDE8;
-  --ink:     #1A1A2E;
-  --muted:   #6B6880;
-  --border:  #DDDBE8;
-  --ff-en:   'Barlow', system-ui, sans-serif;
-  --ff-sr:   'Libre Baskerville', Georgia, serif;
-  --ff-ar:   'Tajawal', 'Arabic UI Text', sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff-en);background:var(--white);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden}
-
-/* UTIL */
-.container{max-width:1120px;margin:0 auto;padding:0 28px}
-.section{padding:88px 0}
-.section-sm{padding:56px 0}
-.ar{font-family:var(--ff-ar);direction:rtl}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--blue-dk);border-bottom:3px solid var(--red)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:0 28px;height:64px}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:2px}
-.nav-logo-text{display:flex;flex-direction:column;line-height:1.15}
-.nav-logo-text .en{font-family:var(--ff-sr);font-size:13px;font-weight:700;color:#fff;letter-spacing:.01em}
-.nav-logo-text .ar-n{font-family:var(--ff-ar);font-size:12px;color:rgba(255,255,255,.75);font-weight:700}
-.nav-links{display:flex;gap:24px;align-items:center}
-.nav-links a{font-family:var(--ff-en);font-size:13px;font-weight:500;color:rgba(255,255,255,.78);text-decoration:none;letter-spacing:.02em;transition:color .18s}
-.nav-links a:hover{color:#fff}
-.nav-cta{background:var(--red)!important;color:#fff!important;padding:7px 18px;border-radius:3px;font-weight:600!important}
-.nav-cta:hover{background:var(--red-dk)!important}
-
-/* ── HERO ── */
-.hero{min-height:100vh;background:var(--blue-dk);display:grid;grid-template-columns:1fr 1fr;padding-top:64px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.hero-mountains{position:absolute;bottom:0;left:0;right:0;height:45%;opacity:.06}
-.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:32px 32px}
-.hero-red-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
-
-.hero-en{padding:72px 52px 72px 0;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.12);position:relative;z-index:1}
-.hero-en-inner{max-width:490px;margin-left:auto}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;font-family:var(--ff-en);display:flex;align-items:center;gap:8px}
-.eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--red);flex-shrink:0}
-.hero-en h1{font-family:var(--ff-sr);font-size:clamp(34px,4.8vw,56px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:22px}
-.hero-en h1 em{color:var(--red);font-style:normal}
-.hero-en p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:34px;font-weight:400}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-red{display:inline-block;background:var(--red);color:#fff;padding:13px 26px;border-radius:3px;font-family:var(--ff-en);font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.04em;transition:background .18s,transform .15s;border:none;cursor:pointer}
-.btn-red:hover{background:var(--red-dk);transform:translateY(-1px)}
-.btn-outline{display:inline-block;background:transparent;color:rgba(255,255,255,.85);padding:12px 26px;border-radius:3px;font-family:var(--ff-en);font-size:14px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:border-color .18s,color .18s;cursor:pointer}
-.btn-outline:hover{border-color:rgba(255,255,255,.7);color:#fff}
-
-.hero-ar{padding:72px 0 72px 52px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
-.hero-ar-inner{max-width:490px}
-.eyebrow-ar{font-family:var(--ff-ar);font-size:13px;font-weight:700;color:rgba(255,255,255,.6);direction:rtl;text-align:right;margin-bottom:18px;display:flex;align-items:center;justify-content:flex-end;gap:8px}
-.eyebrow-ar::after{content:'';display:block;width:28px;height:2px;background:var(--red);flex-shrink:0}
-.hero-ar h2{font-family:var(--ff-ar);font-size:clamp(28px,4.2vw,50px);font-weight:900;line-height:1.3;color:#fff;margin-bottom:22px;direction:rtl;text-align:right}
-.hero-ar h2 em{color:var(--red);font-style:normal}
-.hero-ar p{font-family:var(--ff-ar);font-size:15px;color:rgba(255,255,255,.7);line-height:2;margin-bottom:34px;direction:rtl;text-align:right}
-.btn-red-ar{display:inline-block;background:var(--red);color:#fff;padding:13px 26px;border-radius:3px;font-family:var(--ff-ar);font-size:14px;font-weight:700;text-decoration:none;direction:rtl;transition:background .18s;float:right}
-.btn-red-ar:hover{background:var(--red-dk)}
-.clearfix{clear:both}
-
-/* STATS */
-.stats-bar{background:var(--blue);padding:0;border-bottom:3px solid var(--red-dk)}
-.stats-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat-item{text-align:center;padding:22px 16px;border-right:1px solid rgba(255,255,255,.15)}
-.stat-item:last-child{border-right:none}
-.stat-n{font-family:var(--ff-sr);font-size:30px;font-weight:700;color:#fff;display:block;line-height:1}
-.stat-en{font-size:11px;color:rgba(255,255,255,.7);margin-top:4px;display:block;font-family:var(--ff-en)}
-.stat-ar{font-family:var(--ff-ar);font-size:11px;color:rgba(255,255,255,.55);display:block}
-
-/* ABOUT */
-.about{background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about-en .label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-family:var(--ff-en);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.about-en .label::before{content:'';width:20px;height:2px;background:var(--red);display:block}
-.about-en h2{font-family:var(--ff-sr);font-size:clamp(26px,3.2vw,38px);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:18px}
-.about-en p{color:var(--muted);line-height:1.85;margin-bottom:14px;font-size:15px}
-.about-en p strong{color:var(--ink);font-weight:600}
-.credential{margin-top:24px;padding:18px 20px;background:var(--blue-lt);border-left:4px solid var(--blue);border-radius:0 3px 3px 0}
-.credential p{margin:0;font-size:14px;color:var(--blue-dk);line-height:1.7}
-.credential strong{font-weight:700}
-
-.about-ar{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:36px;border-top:4px solid var(--red)}
-.about-ar .label-ar{font-family:var(--ff-ar);font-size:12px;font-weight:700;color:var(--red);direction:rtl;text-align:right;margin-bottom:14px;display:flex;align-items:center;justify-content:flex-end;gap:8px}
-.about-ar .label-ar::after{content:'';width:20px;height:2px;background:var(--red);display:block}
-.about-ar h3{font-family:var(--ff-ar);font-size:clamp(20px,2.8vw,30px);font-weight:900;line-height:1.35;color:var(--ink);direction:rtl;text-align:right;margin-bottom:16px}
-.about-ar p{font-family:var(--ff-ar);font-size:14px;color:var(--muted);direction:rtl;text-align:right;line-height:2;margin-bottom:10px}
-.disclaimer-box{margin-top:20px;padding:14px 16px;background:var(--red-lt);border-radius:3px;border:1px solid rgba(232,0,10,.2)}
-.disclaimer-box p{font-family:var(--ff-ar);font-size:13px;color:var(--red-dk);margin:0;font-weight:700;direction:rtl;text-align:right}
-
-/* PILLARS */
-.pillars{background:var(--blue-dk)}
-.pillars-header{text-align:center;margin-bottom:56px}
-.pillars-header .label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);font-family:var(--ff-en);margin-bottom:12px}
-.pillars-header h2{font-family:var(--ff-sr);font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;margin-bottom:8px}
-.pillars-header .ar-sub{font-family:var(--ff-ar);font-size:17px;color:rgba(255,255,255,.55)}
-.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
-.pillar-card{background:rgba(255,255,255,.04);padding:28px 22px;transition:background .2s;cursor:default;border-bottom:3px solid transparent}
-.pillar-card:hover{background:rgba(255,255,255,.1);border-bottom-color:var(--red)}
-.pillar-icon{width:40px;height:40px;border-radius:3px;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.pillar-icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8}
-.pillar-card h3{font-family:var(--ff-en);font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
-.pillar-card .ar-t{font-family:var(--ff-ar);font-size:13px;color:rgba(255,255,255,.6);direction:rtl;text-align:right;margin-bottom:10px}
-.pillar-card p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.65}
-
-/* GUIDES */
-.guides{background:var(--cream)}
-.guides-header{margin-bottom:44px}
-.guides-header .label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-family:var(--ff-en);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.guides-header .label::before{content:'';width:20px;height:2px;background:var(--red);display:block}
-.guides-header h2{font-family:var(--ff-sr);font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--ink);margin-bottom:6px}
-.guides-header .ar-sub{font-family:var(--ff-ar);font-size:16px;color:var(--muted)}
-.guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
-.guide-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:3px;padding:26px 22px;text-decoration:none;transition:box-shadow .2s,border-top-color .2s}
-.guide-card:hover{box-shadow:0 4px 20px rgba(63,63,160,.12);border-top-color:var(--red)}
-.guide-type{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-family:var(--ff-en);margin-bottom:10px}
-.guide-card h3{font-family:var(--ff-en);font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.4}
-.guide-card .ar-t{font-family:var(--ff-ar);font-size:13px;color:var(--muted);direction:rtl;text-align:right;margin-bottom:14px}
-.guide-dl{font-size:12px;color:var(--red);font-weight:600;font-family:var(--ff-en);display:flex;align-items:center;gap:5px}
-.guide-dl::after{content:'↓';font-size:14px}
-
-/* COURSE */
-.course{background:var(--white);border-top:1px solid var(--border)}
-.course-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.course-en .label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-family:var(--ff-en);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.course-en .label::before{content:'';width:20px;height:2px;background:var(--red);display:block}
-.course-en h2{font-family:var(--ff-sr);font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--ink);margin-bottom:16px}
-.course-en p{color:var(--muted);line-height:1.85;margin-bottom:24px;font-size:15px}
-.units{list-style:none}
-.unit-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
-.unit-row:last-child{border-bottom:none}
-.unit-num{width:26px;height:26px;border-radius:3px;background:var(--blue);color:#fff;font-size:11px;font-weight:700;font-family:var(--ff-en);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.unit-body{flex:1}
-.unit-body .ue{font-size:14px;color:var(--ink);font-weight:500}
-.unit-body .ua{font-family:var(--ff-ar);font-size:12px;color:var(--muted);direction:rtl;text-align:right}
-
-.course-ar{background:var(--blue-dk);border-radius:4px;padding:36px;border-top:4px solid var(--red)}
-.course-ar h3{font-family:var(--ff-ar);font-size:24px;font-weight:900;color:#fff;direction:rtl;text-align:right;margin-bottom:16px}
-.course-ar p{font-family:var(--ff-ar);font-size:14px;color:rgba(255,255,255,.7);direction:rtl;line-height:2;margin-bottom:24px}
-.stats-mini{display:flex;gap:20px;justify-content:flex-end;margin-bottom:28px;flex-wrap:wrap}
-.sm-stat .n{font-family:var(--ff-sr);font-size:32px;font-weight:700;color:var(--red);display:block;line-height:1}
-.sm-stat .l{font-family:var(--ff-ar);font-size:11px;color:rgba(255,255,255,.55)}
-
-/* SURVEY */
-.survey-section{background:var(--blue-lt)}
-.survey-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.survey-left .label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-family:var(--ff-en);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.survey-left .label::before{content:'';width:20px;height:2px;background:var(--red);display:block}
-.survey-left h2{font-family:var(--ff-sr);font-size:clamp(22px,2.8vw,34px);font-weight:700;color:var(--ink);margin-bottom:14px}
-.survey-left p{color:var(--muted);line-height:1.85;font-size:15px;margin-bottom:10px}
-.survey-left .ar-p{font-family:var(--ff-ar);font-size:14px;color:var(--muted);direction:rtl;text-align:right;line-height:2;margin-top:14px}
-.s-form{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--blue);border-radius:3px;padding:32px}
-.q-b{margin-bottom:22px}
-.q-en{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;font-family:var(--ff-en)}
-.q-ar{font-family:var(--ff-ar);font-size:12px;color:var(--muted);direction:rtl;text-align:right;margin-bottom:10px;display:block}
-.scale-row{display:flex;gap:6px}
-.scale-row label{flex:1}
-.scale-row input[type=radio]{display:none}
-.s-btn{display:block;text-align:center;padding:9px 4px;border:1px solid var(--border);border-radius:3px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s}
-.scale-row input:checked+.s-btn{background:var(--blue);color:#fff;border-color:var(--blue)}
-.scale-ends{display:flex;justify-content:space-between;margin-top:6px}
-.scale-ends span{font-size:10px;color:var(--muted)}
-.yn-row{display:flex;gap:8px}
-.yn-row label{flex:1}
-.yn-row input[type=radio]{display:none}
-.yn-btn{display:block;text-align:center;padding:9px;border:1px solid var(--border);border-radius:3px;font-size:12px;cursor:pointer;color:var(--muted);transition:all .15s}
-.yn-row input:checked+.yn-btn{background:var(--blue-lt);color:var(--blue);border-color:var(--blue);font-weight:600}
-.t-tags{display:flex;flex-wrap:wrap;gap:6px}
-.t-tags label{cursor:pointer}
-.t-tags input[type=radio]{display:none}
-.t-tag{padding:5px 12px;border:1px solid var(--border);border-radius:20px;font-size:11px;color:var(--muted);transition:all .15s}
-.t-tags input:checked+.t-tag{background:var(--blue-lt);color:var(--blue);border-color:var(--blue);font-weight:600}
-.open-input{width:100%;border:1px solid var(--border);border-radius:3px;padding:10px 12px;font-family:var(--ff-en);font-size:13px;color:var(--ink);background:var(--cream);resize:vertical;min-height:60px}
-.open-input:focus{outline:none;border-color:var(--blue)}
-.s-submit{width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:3px;font-family:var(--ff-en);font-size:14px;font-weight:600;cursor:pointer;margin-top:8px;transition:background .18s}
-.s-submit:hover{background:var(--blue-dk)}
-.s-thanks{display:none;text-align:center;padding:40px 20px}
-.s-thanks h3{font-family:var(--ff-sr);font-size:22px;color:var(--blue);margin-bottom:8px}
-.s-thanks p{color:var(--muted);font-size:14px}
-
-/* NEWSLETTER */
-.newsletter{background:var(--blue-dk);border-top:4px solid var(--red)}
-.nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.nl-text h2{font-family:var(--ff-sr);font-size:clamp(22px,2.8vw,34px);font-weight:700;color:#fff;margin-bottom:8px}
-.nl-text .ar-h{font-family:var(--ff-ar);font-size:20px;color:rgba(255,255,255,.65);direction:rtl;text-align:right;margin-bottom:14px}
-.nl-text p{color:rgba(255,255,255,.65);line-height:1.8;font-size:15px}
-.nl-form{display:flex;flex-direction:column;gap:10px}
-.nl-row{display:flex;gap:10px}
-.nl-in{flex:1;padding:12px 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:3px;color:#fff;font-family:var(--ff-en);font-size:14px}
-.nl-in::placeholder{color:rgba(255,255,255,.45)}
-.nl-in:focus{outline:none;border-color:rgba(255,255,255,.55)}
-.nl-btn{padding:12px 22px;background:var(--red);color:#fff;border:none;border-radius:3px;font-family:var(--ff-en);font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .18s}
-.nl-btn:hover{background:var(--red-dk)}
-.nl-note{font-size:11px;color:rgba(255,255,255,.45)}
-.nl-thanks{display:none;color:#fff;text-align:center;padding:20px 0}
-.nl-thanks p:first-child{font-size:18px;font-weight:700;font-family:var(--ff-sr);margin-bottom:8px;color:#fff}
-.nl-thanks p:last-child{font-size:14px;opacity:.7}
-
-/* PARTNERS */
-.partners{background:var(--cream);padding:48px 0;border-top:1px solid var(--border)}
-.partners-lbl{text-align:center;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--ff-en);margin-bottom:28px}
-.partners-row{display:flex;justify-content:center;align-items:center;gap:44px;flex-wrap:wrap}
-.p-badge{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.5;transition:opacity .2s;cursor:default}
-.p-badge:hover{opacity:1}
-.p-dot{width:8px;height:8px;border-radius:50%;background:var(--blue)}
-.p-name{font-size:11px;font-weight:600;color:var(--ink);font-family:var(--ff-en);text-align:center;line-height:1.3}
-.partners-note{text-align:center;margin-top:28px;font-size:13px;color:var(--muted)}
-.partners-note a{color:var(--blue);text-decoration:none;font-weight:600}
-
-/* FOOTER */
-footer{background:var(--ink);color:rgba(255,255,255,.6);padding:64px 0 32px;border-top:4px solid var(--red)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-logo img{height:52px;width:52px;object-fit:contain}
-.footer-logo-text .en{font-family:var(--ff-sr);font-size:16px;font-weight:700;color:#fff}
-.footer-logo-text .arn{font-family:var(--ff-ar);font-size:14px;color:rgba(255,255,255,.65);font-weight:700}
-.footer-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.45);max-width:320px}
-.footer-brand .disc{margin-top:14px;font-size:11px;color:rgba(255,255,255,.3);line-height:1.6;font-style:italic}
-.footer-col h4{font-family:var(--ff-en);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:10px}
-.footer-col a{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .18s}
-.footer-col a:hover{color:#fff}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,.3)}
-.socials{display:flex;gap:16px}
-.socials a{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:600;font-family:var(--ff-en);transition:color .18s}
-.socials a:hover{color:var(--red)}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-en-inner{animation:fadeUp .75s ease both}
-.hero-ar-inner{animation:fadeUp .75s .12s ease both}
-.stat-item:nth-child(1){animation:fadeUp .5s .1s ease both}
-.stat-item:nth-child(2){animation:fadeUp .5s .2s ease both}
-.stat-item:nth-child(3){animation:fadeUp .5s .3s ease both}
-.stat-item:nth-child(4){animation:fadeUp .5s .4s ease both}
-
-/* RESPONSIVE */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-en{padding:56px 28px 36px;border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
-  .hero-en-inner{max-width:100%;margin:0}
-  .hero-ar{padding:36px 28px 56px}
-  .hero-ar-inner{max-width:100%}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat-item:nth-child(2){border-right:none}
-  .about-grid,.course-inner,.survey-inner,.nl-inner,.footer-grid{grid-template-columns:1fr;gap:40px}
-  .pillars-grid{grid-template-columns:repeat(2,1fr)}
-  .guides-grid{grid-template-columns:repeat(2,1fr)}
-  nav .nav-links{display:none}
-}
-@media(max-width:600px){
-  .pillars-grid,.guides-grid{grid-template-columns:1fr}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .nl-row{flex-direction:column}
-  .footer-grid{grid-template-columns:1fr}
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #FFFFFF;
+    color: #1e2a3e;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  section {
+    padding: 80px 0;
+  }
+  /* colors */
+  :root {
+    --blue-dark: #0B2B5C;
+    --blue: #1E3A6F;
+    --red: #C4281C;
+    --red-bright: #E03A2E;
+    --gray-light: #F4F6F9;
+    --gray-mid: #5A6874;
+    --white: #FFFFFF;
+  }
+  .bg-dark { background: var(--blue-dark); color: white; }
+  .bg-light { background: var(--gray-light); }
+  .text-red { color: var(--red); }
+  .btn-primary {
+    background: var(--red);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--red-bright); }
+  .btn-outline-light {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .btn-outline-light:hover { border-color: white; }
+  .badge-coming {
+    background: #e9ecef;
+    color: #5a6874;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  /* header */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--blue-dark);
+    padding: 12px 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo img { height: 44px; width: auto; }
+  .logo-text .en { font-weight: 700; font-size: 18px; color: white; }
+  .logo-text .ar { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .nav-links a.nav-cta {
+    background: var(--red);
+    padding: 8px 20px;
+    border-radius: 40px;
+    color: white;
+  }
+  /* hero */
+  .hero {
+    padding-top: 120px;
+    background: linear-gradient(135deg, #0B2B5C 0%, #12376E 100%);
+    color: white;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+  .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+  .hero-ar { direction: rtl; text-align: right; font-family: 'Segoe UI', 'Tajawal', system-ui; }
+  .hero-ar h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+  /* stats */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 32px 0;
+  }
+  .stat-number { font-size: 2.5rem; font-weight: 800; }
+  /* pillars grid */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 2px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .pillar-card {
+    background: white;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .pillar-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+  .pillar-card .ar { font-family: 'Tajawal', system-ui; font-size: 0.85rem; color: #5a6874; }
+  /* guides grid */
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .guide-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 20px;
+    border: 1px solid #eef2f6;
+    transition: 0.2s;
+  }
+  .guide-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .guide-card .ar-title { font-family: 'Tajawal', system-ui; font-size: 0.9rem; color: #5a6874; margin-bottom: 12px; }
+  .guide-status { margin-top: 16px; }
+  /* course & power series */
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .dark-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 32px;
+    border-top: 4px solid var(--red);
+  }
+  /* footer */
+  footer {
+    background: #0F172A;
+    color: #94a3b8;
+    padding: 48px 0 24px;
+    margin-top: 40px;
+  }
+  @media (max-width: 768px) {
+    .hero-grid, .two-columns { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .nav-links { display: none; }
+  }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#home">
-      <img src="/mnt/user-data/uploads/final_logo_Canadian_Law_in_Arabic.png" alt="Canada Law in Arabic logo">
-      <div class="nav-logo-text">
-        <span class="en">Canada Law in Arabic</span>
-        <span class="ar-n">قانون كندا بالعربي</span>
-      </div>
+    <a href="#home" class="logo">
+      <img src="images/logo.png" alt="Canada Law in Arabic" onerror="this.src='https://placehold.co/44x44?text=CLA'">
+      <div class="logo-text"><div class="en">Canada Law in Arabic</div><div class="ar">قانون كندا بالعربي</div></div>
     </a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#pillars">Topics</a>
-      <a href="#guides">Free Guides</a>
+      <a href="#guides">Guides</a>
       <a href="#course">Course</a>
-      <a href="#survey">Survey</a>
-      <a href="#newsletter" class="nav-cta">Subscribe Free</a>
+      <a href="#power-series">Power Series</a>
+      <a href="#newsletter" class="nav-cta">Subscribe</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg">
-    <div class="hero-dots"></div>
-    <svg class="hero-mountains" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,300 200,80 400,300" fill="white"/>
-      <polygon points="150,300 380,40 610,300" fill="white"/>
-      <polygon points="350,300 600,60 850,300" fill="white"/>
-      <polygon points="600,300 820,100 1050,300" fill="white"/>
-      <polygon points="850,300 1050,120 1200,300" fill="white"/>
-    </svg>
-    <div class="hero-red-bar"></div>
-  </div>
-
-  <div class="hero-en">
-    <div class="hero-en-inner">
-      <p class="eyebrow">Canada Law in Arabic Foundation</p>
-      <h1>Your legal rights in Canada — in <em>Arabic</em></h1>
-      <p>Free, credible, trilingual legal education for Arabic-speaking Canadians. Family law, tenancy, employment, real estate, accidents and more — explained clearly, with no cost and no jargon.</p>
-      <div class="hero-btns">
-        <a href="#guides" class="btn-red">Download Free Guides</a>
-        <a href="#course" class="btn-outline">Free Online Course</a>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>Your legal rights in Canada — <span class="text-red">in Arabic</span></h1>
+        <p>Canada Law in Arabic Foundation exists so that no Arabic‑speaking Canadian is excluded from legal protection, access to justice, or democratic participation by a language barrier. Free legal education across 12 areas of law, plus civic training on elections, organizing, and accountability – from home to Parliament.</p>
+        <a href="#guides" class="btn-primary">Explore guides</a>
+        <a href="#power-series" class="btn-outline-light" style="margin-left: 12px;">Power series</a>
       </div>
-    </div>
-  </div>
-
-  <div class="hero-ar">
-    <div class="hero-ar-inner">
-      <p class="eyebrow-ar">مؤسسة قانون كندا بالعربي</p>
-      <h2>حقوقك القانونية في كندا — <em>بالعربي</em></h2>
-      <p>تثقيف قانوني مجاني وموثوق للمجتمع العربي في كندا. قانون الأسرة، الإيجار، العمل، العقارات، الحوادث والمزيد — شرح واضح، بدون تكلفة ولا تعقيد.</p>
-      <a href="#guides" class="btn-red-ar">حمّل الأدلة المجانية</a>
-      <div class="clearfix"></div>
+      <div class="hero-ar">
+        <h2>حقوقك القانونية في كندا — <span class="text-red">بالعربي</span></h2>
+        <p>مؤسسة قانون كندا بالعربي موجودة لضمان ألا يُستبعد أي ناطق بالعربية من الحماية القانونية أو الوصول إلى العدالة أو المشاركة الديمقراطية بسبب اللغة. نقدم تثقيفاً قانونياً مجانياً في ١٢ مجالاً، وتثقيفاً مدنياً حول الانتخابات والتنظيم والمحاسبة – من البيت إلى البرلمان.</p>
+        <a href="#guides" class="btn-primary">استكشف الأدلة</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <span class="stat-n">120+</span>
-      <span class="stat-en">Reels published</span>
-      <span class="stat-ar">ريل منشور</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n">900+</span>
-      <span class="stat-en">Scripts & guides</span>
-      <span class="stat-ar">سكريبت ودليل</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n">10</span>
-      <span class="stat-en">Workshop sessions</span>
-      <span class="stat-ar">جلسة تدريبية</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n">$0</span>
-      <span class="stat-en">Cost to you</span>
-      <span class="stat-ar">مجاني تماماً</span>
-    </div>
-  </div>
+<div class="stats-grid">
+  <div><div class="stat-number">400+</div><div>Reels</div></div>
+  <div><div class="stat-number">12</div><div>Legal areas</div></div>
+  <div><div class="stat-number">8+</div><div>Course units</div></div>
+  <div><div class="stat-number">600K+</div><div>Arabic speakers in Canada</div></div>
 </div>
 
-<!-- ABOUT -->
-<section class="about section" id="about">
+<section id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-en">
-        <p class="label">About the Foundation</p>
-        <h2>Legal knowledge shouldn't depend on the language you speak</h2>
-        <p>Over 400,000 Arabic speakers live in Canada — yet virtually no free, credible Arabic-language legal education exists. The result is predictable: newcomers sign contracts they don't understand, lose jobs they had every right to keep, and navigate family crises without knowing their options.</p>
-        <p><strong>Canada Law in Arabic Foundation</strong> exists to close that gap. We produce free legal education content in Arabic, English, and French — delivered through social media, downloadable guides, and structured workshops.</p>
-        <p>This is <strong>not legal advice</strong> — it is legal education. Every person who understands their rights before a crisis is one fewer person who needs emergency legal help during one.</p>
-        <div class="credential">
-          <p><strong>Delivered by a lawyer.</strong> Our founder, Khalid Alhawasli, is an internationally trained lawyer with 15+ years of experience, completing an LL.M. in Canadian Common Law at Osgoode Hall Law School and pursuing Alberta licensure through the NCA process.</p>
+    <div class="two-columns">
+      <div>
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Legal knowledge shouldn't depend on the language you speak</h2>
+        <p>Over 600,000 Arabic speakers live in Canada — yet virtually no free, credible Arabic‑language legal education existed. We close that gap with free content in Arabic, English, and French.</p>
+        <div style="background: #F1F5F9; padding: 20px; border-left: 4px solid var(--red); margin-top: 24px;">
+          <strong>Delivered by a lawyer.</strong> Founder Khalid Alhawasli, LL.M. (Osgoode Hall), pursuing Alberta licensure.
         </div>
       </div>
-      <div class="about-ar">
-        <p class="label-ar">عن المؤسسة</p>
-        <h3>المعرفة القانونية حق لا تحدده اللغة</h3>
-        <p>أكثر من 400,000 ناطق بالعربية في كندا — ومع ذلك لا يوجد تقريباً أي مصدر مجاني وموثوق للتثقيف القانوني باللغة العربية.</p>
-        <p>النتيجة واضحة: قادمون جدد يوقّعون عقوداً لا يفهمونها، ويفقدون وظائف كان لهم الحق في الاحتفاظ بها، ويواجهون أزمات الأسرة دون معرفة خياراتهم.</p>
-        <p>مؤسسة قانون كندا بالعربي تعمل على سد هذه الفجوة — بمحتوى قانوني تعليمي مجاني بالعربية والإنجليزية والفرنسية.</p>
-        <div class="disclaimer-box">
-          <p>تنبيه: هذا المحتوى للتثقيف العام فقط وليس استشارة قانونية. لأي قضية فردية، تواصل مع محامٍ مرخّص.</p>
+      <div style="background: #F8FAFE; padding: 32px; border-radius: 24px; border-top: 4px solid var(--red);">
+        <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; text-align: right; direction: rtl;">عن المؤسسة</h3>
+        <p style="font-family: 'Tajawal'; direction: rtl; text-align: right;">أكثر من ٦٠٠ ألف ناطق بالعربية في كندا — ومع ذلك لا يوجد تقريباً أي مصدر مجاني وموثوق للتثقيف القانوني باللغة العربية. نعمل على سد هذه الفجوة.</p>
+        <div style="background: #FFE8E6; padding: 12px; border-radius: 12px; margin-top: 16px;">
+          <p style="font-family: 'Tajawal'; font-size: 13px; color: #B91C1C; direction: rtl; text-align: right;">تنبيه: هذا المحتوى للتثقيف العام فقط وليس استشارة قانونية.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PILLARS -->
-<section class="pillars section" id="pillars">
+<section id="pillars" class="bg-light">
   <div class="container">
-    <div class="pillars-header">
-      <p class="label">Legal Topics — المواضيع القانونية</p>
-      <h2>Eight areas of law that affect your daily life</h2>
-      <p class="ar-sub">ثمانية مجالات قانونية تؤثر على حياتك اليومية</p>
+    <div style="text-align: center; margin-bottom: 48px;">
+      <h2 style="font-size: 2rem;">12 areas of law that affect your daily life</h2>
+      <p style="color: #5a6874;">١٢ مجالاً قانونياً تؤثر على حياتك اليومية</p>
     </div>
     <div class="pillars-grid">
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <h3>Family Law</h3><div class="ar-t">قانون الأسرة</div>
-        <p>Divorce, custody, child & spousal support, property division, and domestic violence protections.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-        <h3>Tenancy Rights</h3><div class="ar-t">حقوق المستأجر</div>
-        <p>Leases, deposits, eviction process, and the Alberta RTDRS dispute service.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-        <h3>Employment Law</h3><div class="ar-t">قانون العمل</div>
-        <p>Minimum wage, wrongful dismissal, notice periods, WCB claims, and workplace rights.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <h3>Accidents & Injury</h3><div class="ar-t">الحوادث والإصابات</div>
-        <p>Car accidents, insurance claims, slip and fall, and limitation periods in Alberta.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
-        <h3>Real Estate</h3><div class="ar-t">العقارات</div>
-        <p>Home purchase, title insurance, closing costs, mortgage basics, and condo law.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-        <h3>Immigration</h3><div class="ar-t">الهجرة</div>
-        <p>Permanent residency, citizenship, refugee protection, and sponsorship obligations.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <h3>Wills & Estates</h3><div class="ar-t">الوصايا والتركات</div>
-        <p>Why a will matters, intestacy, executor duties, and Islamic vs Canadian inheritance law.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3>Consumer Protection</h3><div class="ar-t">حماية المستهلك</div>
-        <p>Predatory lending, door-to-door sales, debt collection rights, and credit protection.</p>
-      </div>
+      <div class="pillar-card"><h3>Family Law</h3><div class="ar">قانون الأسرة</div></div>
+      <div class="pillar-card"><h3>Tenancy Rights</h3><div class="ar">حقوق المستأجر</div></div>
+      <div class="pillar-card"><h3>Employment Law</h3><div class="ar">قانون العمل</div></div>
+      <div class="pillar-card"><h3>Accidents & Injury</h3><div class="ar">الحوادث والإصابات</div></div>
+      <div class="pillar-card"><h3>Real Estate & Mortgages</h3><div class="ar">العقارات والرهون</div></div>
+      <div class="pillar-card"><h3>Immigration Law</h3><div class="ar">قانون الهجرة</div></div>
+      <div class="pillar-card"><h3>Wills, Estates & Trusts</h3><div class="ar">الوصايا والتركات</div></div>
+      <div class="pillar-card"><h3>Condominium Law</h3><div class="ar">قانون الشقق</div></div>
+      <div class="pillar-card"><h3>Consumer Protection</h3><div class="ar">حماية المستهلك</div></div>
+      <div class="pillar-card"><h3>Criminal Law</h3><div class="ar">القانون الجنائي</div></div>
+      <div class="pillar-card"><h3>Business & Commercial Law</h3><div class="ar">القانون التجاري</div></div>
+      <div class="pillar-card"><h3>Taxation Law</h3><div class="ar">قانون الضرائب</div></div>
     </div>
   </div>
 </section>
 
-<!-- GUIDES -->
-<section class="guides section" id="guides">
+<section id="guides">
   <div class="container">
-    <div class="guides-header">
-      <p class="label">Free Downloads — تحميل مجاني</p>
-      <h2>Practical guides you can use today</h2>
-      <p class="ar-sub">أدلة عملية يمكنك استخدامها اليوم</p>
+    <div style="text-align: center; margin-bottom: 32px;">
+      <h2 style="font-size: 2rem;">20+ video + PDF guides (coming soon)</h2>
+      <p style="color: #5a6874;">أدلة جديدة بالصوت والصورة والكتاب – قريباً</p>
     </div>
     <div class="guides-grid">
-      <a class="guide-card" href="#newsletter"><div class="guide-type">Free Guide — دليل مجاني</div><h3>7 Steps After a Car Accident in Alberta</h3><div class="ar-t">٧ خطوات بعد حادث سيارة في ألبرتا</div><div class="guide-dl">Download free</div></a>
-      <a class="guide-card" href="#newsletter"><div class="guide-type">Free Guide — دليل مجاني</div><h3>Complete Guide to Buying a Home in Alberta</h3><div class="ar-t">الدليل الشامل لشراء منزل في ألبرتا</div><div class="guide-dl">Download free</div></a>
-      <a class="guide-card" href="#newsletter"><div class="guide-type">Free Guide — دليل مجاني</div><h3>Child Support & Custody After Divorce</h3><div class="ar-t">دليل النفقة والأطفال بعد الطلاق</div><div class="guide-dl">Download free</div></a>
-      <a class="guide-card" href="#newsletter"><div class="guide-type">Free Guide — دليل مجاني</div><h3>10 Risks Covered by Title Insurance</h3><div class="ar-t">١٠ مخاطر يغطيها تأمين الملكية</div><div class="guide-dl">Download free</div></a>
-      <a class="guide-card" href="#newsletter"><div class="guide-type">Free Guide — دليل مجاني</div><h3>Questions to Ask Your Family Lawyer</h3><div class="ar-t">أسئلة لطرحها على محامي الأسرة</div><div class="guide-dl">Download free</div></a>
-      <a class="guide-card" href="#newsletter"><div class="guide-type">Free Guide — دليل مجاني</div><h3>Your Rights as a Worker in Alberta</h3><div class="ar-t">حقوقك كعامل في ألبرتا</div><div class="guide-dl">Download free</div></a>
+      <!-- Criminal Law (5) -->
+      <div class="guide-card"><h3>Arrested? 7 Things You Must Say</h3><div class="ar-title">اعتقال؟ ٧ أشياء يجب أن تقولها</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Bail & Release: Get Out of Jail Fast</h3><div class="ar-title">الكفالة والإفراج: اخرج بسرعة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Criminal Record: Seal It or Pardon</h3><div class="ar-title">السجل الجنائي: إغلاقه أو العفو</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Police Search: Warrant or Not?</h3><div class="ar-title">تفتيش الشرطة: مذكرة أم لا؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Legal Aid for Criminal Cases</h3><div class="ar-title">المساعدة القانونية للقضايا الجنائية</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <!-- Business (6) -->
+      <div class="guide-card"><h3>Sole Prop vs. Corporation – Tax</h3><div class="ar-title">الملكية الفردية أم الشركة؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Shareholder Agreement – 5 Clauses</h3><div class="ar-title">اتفاقية المساهمين – ٥ بنود</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Business Contracts – Template</h3><div class="ar-title">العقود التجارية – نموذج</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Hiring Employees – Legal Traps</h3><div class="ar-title">توظيف الموظفين – فخاخ قانونية</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Liability Insurance – How Much?</h3><div class="ar-title">تأمين المسؤولية – كم يكفي؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Closing a Business – Debts & Taxes</h3><div class="ar-title">إغلاق عمل – ديون وضرائب</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <!-- Marketing & Advertising (4) -->
+      <div class="guide-card"><h3>False Advertising – Costly Words</h3><div class="ar-title">الإعلانات المضللة – كلمات مكلفة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Email Marketing – Legal Rules</h3><div class="ar-title">التسويق الإلكتروني – قواعد قانونية</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Customer Photos – Permission Needed</h3><div class="ar-title">صور العملاء – هل تحتاج إذناً؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Contests & Giveaways – Legal Rules</h3><div class="ar-title">المسابقات والهدايا – قانونياً</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <!-- Taxation (5) -->
+      <div class="guide-card"><h3>Tax Filing – Deadlines & Deductions</h3><div class="ar-title">تقديم الضرائب – مواعيد وخصومات</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>RRSP vs. TFSA – Which Saves Tax?</h3><div class="ar-title">RRSP أم TFSA – أيهما أفضل؟</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Self‑Employed Tax Deductions</h3><div class="ar-title">خصومات ضريبية للأعمال الحرة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>HST/GST for Small Business</h3><div class="ar-title">HST/GST للشركات الصغيرة</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
+      <div class="guide-card"><h3>Tax Debt – Payment Plans & Relief</h3><div class="ar-title">الديون الضريبية – خطط الدفع</div><div class="guide-status"><span class="badge-coming">Coming soon</span> <span style="margin-left: 8px; font-size: 13px;">📧 Subscribe to get PDF</span></div></div>
     </div>
-    <p style="color:var(--muted);font-size:13px;text-align:center">Subscribe with your email to receive all guides instantly — اشترك بإيميلك لاستلام جميع الأدلة فوراً</p>
+    <p style="text-align: center; margin-top: 32px; color: #5a6874;">Subscribe to receive each PDF guide as soon as it’s released — اشترك ليصلك كل دليل فور صدوره</p>
   </div>
 </section>
 
-<!-- COURSE -->
-<section class="course section" id="course">
+<section id="course" class="bg-light">
   <div class="container">
-    <div class="course-inner">
-      <div class="course-en">
-        <p class="label">Free Online Course</p>
-        <h2>Canadian Law Fundamentals for Newcomers</h2>
-        <p>A complete 8-unit free course covering everything a newcomer needs — from your fundamental rights to family law, tenancy, employment, and beyond. Self-paced. In Arabic.</p>
-        <ul class="units">
-          <li class="unit-row"><span class="unit-num">1</span><div class="unit-body"><div class="ue">The Canadian Legal System</div><div class="ua">النظام القانوني الكندي</div></div></li>
-          <li class="unit-row"><span class="unit-num">2</span><div class="unit-body"><div class="ue">Your Fundamental Rights & Charter</div><div class="ua">حقوقك الأساسية والميثاق الكندي</div></div></li>
-          <li class="unit-row"><span class="unit-num">3</span><div class="unit-body"><div class="ue">Family Law in Canada</div><div class="ua">قانون الأسرة في كندا</div></div></li>
-          <li class="unit-row"><span class="unit-num">4</span><div class="unit-body"><div class="ue">Tenancy & Housing Rights</div><div class="ua">حقوق المستأجر والسكن</div></div></li>
-          <li class="unit-row"><span class="unit-num">5</span><div class="unit-body"><div class="ue">Real Estate Transactions</div><div class="ua">المعاملات العقارية</div></div></li>
-          <li class="unit-row"><span class="unit-num">6</span><div class="unit-body"><div class="ue">Employment Law</div><div class="ua">قانون العمل</div></div></li>
-          <li class="unit-row"><span class="unit-num">7</span><div class="unit-body"><div class="ue">Driving & Traffic Law</div><div class="ua">قانون السير والمرور</div></div></li>
-          <li class="unit-row"><span class="unit-num">8</span><div class="unit-body"><div class="ue">Dealing with Police & Authorities</div><div class="ua">التعامل مع الشرطة والسلطات</div></div></li>
+    <div class="two-columns">
+      <div>
+        <h2 style="font-size: 2rem;">Canadian Law Fundamentals for Newcomers</h2>
+        <p>A complete 8+ unit free course covering everything a newcomer needs — from your fundamental rights to family law, tenancy, employment, and beyond. Self‑paced. In Arabic.</p>
+        <ul style="margin-top: 20px; list-style: none;">
+          <li>✓ The Canadian Legal System</li>
+          <li>✓ Your Fundamental Rights & Charter</li>
+          <li>✓ Family Law in Canada</li>
+          <li>✓ Tenancy & Housing Rights</li>
+          <li>✓ Real Estate Transactions</li>
+          <li>✓ Employment Law</li>
+          <li>✓ Driving & Traffic Law</li>
+          <li>✓ Dealing with Police & Authorities</li>
         </ul>
       </div>
-      <div class="course-ar">
-        <h3>دورة مجانية: أساسيات القانون الكندي للمهاجرين</h3>
-        <div class="stats-mini">
-          <div class="sm-stat"><span class="n">8</span><span class="l">وحدات</span></div>
-          <div class="sm-stat"><span class="n">5+</span><span class="l">ساعات</span></div>
-          <div class="sm-stat"><span class="n">$0</span><span class="l">مجاناً</span></div>
+      <div class="dark-card" style="background: var(--blue-dark); color: white;">
+        <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; text-align: right; direction: rtl;">دورة مجانية: أساسيات القانون الكندي للمهاجرين</h3>
+        <div style="display: flex; gap: 24px; justify-content: flex-end; margin: 24px 0;">
+          <div><span style="font-size: 2rem; font-weight: 800; color: var(--red);">8+</span><br>وحدات</div>
+          <div><span style="font-size: 2rem; font-weight: 800; color: var(--red);">$0</span><br>مجاناً</div>
         </div>
-        <p>دورة شاملة تغطي كل ما يحتاجه القادم الجديد لفهم النظام القانوني الكندي — بوتيرتك الخاصة، بالعربية، مجانية تماماً.</p>
-        <a href="#newsletter" class="btn-red-ar" style="float:right">سجّل للوصول المجاني</a>
-        <div class="clearfix"></div>
+        <a href="#newsletter" class="btn-primary" style="float: right;">سجّل للوصول المجاني</a>
+        <div style="clear: both;"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SURVEY -->
-<section class="survey-section section" id="survey">
+<section id="power-series" style="background: var(--blue-dark); color: white;">
   <div class="container">
-    <div class="survey-inner">
-      <div class="survey-left">
-        <p class="label">Impact Survey — استبيان الأثر</p>
-        <h2>Two minutes that keep this free forever</h2>
-        <p>Your answers help us measure our impact and secure the grants that keep all content free. Anonymous. Takes 2 minutes.</p>
-        <p class="ar-p">إجاباتك تساعدنا في قياس الأثر وتأمين التمويل الذي يبقي كل المحتوى مجانياً. مجهول الهوية. دقيقتان فقط.</p>
+    <div class="two-columns">
+      <div>
+        <div style="color: var(--red); font-weight: 600; letter-spacing: 1px;">NEW SERIES — من البيت إلى البرلمان</div>
+        <h2 style="font-size: 2rem; margin: 16px 0;">From Home to Parliament — من البيت إلى البرلمان</h2>
+        <p>A new video series teaching Arabic‑speaking Canadians how to build real political power. Learn how federal, provincial, and municipal elections work. How to register voters, organize get‑out‑the‑vote drives, pressure elected officials, file human rights complaints, and even run for office.</p>
+        <p style="margin-top: 16px;">Coming 2026 – free on YouTube, in Arabic with English subtitles.</p>
+        <a href="#newsletter" class="btn-primary" style="margin-top: 24px; display: inline-block;">Notify me when launched</a>
       </div>
-      <div class="s-form" id="s-form">
-        <div class="q-b">
-          <div class="q-en">Q1 — Before following us, your legal knowledge in Canada?</div>
-          <span class="q-ar">قبل متابعتك، ما مستوى معرفتك بحقوقك القانونية في كندا؟</span>
-          <div class="scale-row">
-            <label><input type="radio" name="q1" value="1"><span class="s-btn">1</span></label>
-            <label><input type="radio" name="q1" value="2"><span class="s-btn">2</span></label>
-            <label><input type="radio" name="q1" value="3"><span class="s-btn">3</span></label>
-            <label><input type="radio" name="q1" value="4"><span class="s-btn">4</span></label>
-            <label><input type="radio" name="q1" value="5"><span class="s-btn">5</span></label>
-          </div>
-          <div class="scale-ends"><span>No knowledge / لا أعرف</span><span>Very informed / ملم جداً</span></div>
-        </div>
-        <div class="q-b">
-          <div class="q-en">Q2 — After our content, your knowledge now?</div>
-          <span class="q-ar">بعد متابعة المحتوى، ما مستوى معرفتك الآن؟</span>
-          <div class="scale-row">
-            <label><input type="radio" name="q2" value="1"><span class="s-btn">1</span></label>
-            <label><input type="radio" name="q2" value="2"><span class="s-btn">2</span></label>
-            <label><input type="radio" name="q2" value="3"><span class="s-btn">3</span></label>
-            <label><input type="radio" name="q2" value="4"><span class="s-btn">4</span></label>
-            <label><input type="radio" name="q2" value="5"><span class="s-btn">5</span></label>
-          </div>
-          <div class="scale-ends"><span>No knowledge / لا أعرف</span><span>Very informed / ملم جداً</span></div>
-        </div>
-        <div class="q-b">
-          <div class="q-en">Q3 — Did our content help in a real legal situation?</div>
-          <span class="q-ar">هل ساعدك المحتوى في موقف قانوني فعلي؟</span>
-          <div class="yn-row">
-            <label><input type="radio" name="q3" value="yes"><span class="yn-btn">نعم · Yes</span></label>
-            <label><input type="radio" name="q3" value="no"><span class="yn-btn">لا · No</span></label>
-            <label><input type="radio" name="q3" value="notyet"><span class="yn-btn">لم تواجهني حالة · Not yet</span></label>
-          </div>
-        </div>
-        <div class="q-b">
-          <div class="q-en">Q4 — Most useful topic to you?</div>
-          <span class="q-ar">الموضوع الأكثر فائدة لك؟</span>
-          <div class="t-tags">
-            <label><input type="radio" name="q4" value="family"><span class="t-tag">Family / الأسرة</span></label>
-            <label><input type="radio" name="q4" value="tenancy"><span class="t-tag">Tenancy / الإيجار</span></label>
-            <label><input type="radio" name="q4" value="employment"><span class="t-tag">Employment / العمل</span></label>
-            <label><input type="radio" name="q4" value="accidents"><span class="t-tag">Accidents / الحوادث</span></label>
-            <label><input type="radio" name="q4" value="realestate"><span class="t-tag">Real estate / العقارات</span></label>
-            <label><input type="radio" name="q4" value="immigration"><span class="t-tag">Immigration / الهجرة</span></label>
-            <label><input type="radio" name="q4" value="wills"><span class="t-tag">Wills / الوصايا</span></label>
-            <label><input type="radio" name="q4" value="consumer"><span class="t-tag">Consumer / المستهلك</span></label>
-          </div>
-        </div>
-        <div class="q-b">
-          <div class="q-en">Q5 — A topic you wish we covered? (optional)</div>
-          <span class="q-ar">موضوع تريدنا أن نغطيه؟ (اختياري)</span>
-          <textarea class="open-input" id="q5" placeholder="اكتب هنا / Write here..."></textarea>
-        </div>
-        <button class="s-submit" onclick="submitSurvey()">Submit Survey — إرسال الاستبيان</button>
-        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px">Anonymous · مجهول الهوية · For grant reporting only</p>
-      </div>
-      <div class="s-thanks" id="s-thanks">
-        <h3>شكراً · Thank you</h3>
-        <p>Your response has been recorded. Every answer helps us secure funding to keep this service free.</p>
-        <p style="font-family:var(--ff-ar);direction:rtl;margin-top:8px">إجابتك تساعدنا في تأمين التمويل والحفاظ على هذه الخدمة مجانية.</p>
+      <div class="dark-card">
+        <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; margin-bottom: 16px;">من البيت إلى البرلمان</h3>
+        <p style="font-family: 'Tajawal'; line-height: 1.7; opacity: 0.9;">سلسلة فيديوهات جديدة لتعليم الجاليات العربية في كندا كيفية بناء القوة السياسية. تعرّف على الانتخابات، نظّم حملات تسجيل الناخبين، اكتشف حقوقك، وترشح للمناصب.</p>
+        <a href="#newsletter" class="btn-primary" style="float: right; margin-top: 16px;">أخبرني عند الإطلاق</a>
+        <div style="clear: both;"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="newsletter section" id="newsletter">
+<section id="newsletter">
   <div class="container">
-    <div class="nl-inner">
-      <div class="nl-text">
-        <h2>Get all 6 guides free — instantly</h2>
-        <p class="ar-h">احصل على جميع الأدلة الستة مجاناً — فوراً</p>
-        <p>Subscribe to receive all free legal guides, early access to new workshops, and a monthly Arabic legal education newsletter. No spam. Unsubscribe anytime.</p>
+    <div class="two-columns" style="align-items: center;">
+      <div>
+        <h2 style="font-size: 1.8rem;">Get all guides free — one per month</h2>
+        <p style="font-family: 'Tajawal'; font-size: 1.2rem; margin: 8px 0;">احصل على جميع الأدلة مجاناً — دليل كل شهر</p>
+        <p>Subscribe to receive free PDF guides, early access to new workshops, and a monthly newsletter. One guide every month. No spam.</p>
       </div>
       <div>
-        <div class="nl-form" id="nl-form">
-          <div class="nl-row">
-            <input class="nl-in" type="text" id="nl-name" placeholder="Your name — اسمك">
-            <input class="nl-in" type="email" id="nl-email" placeholder="Email — البريد الإلكتروني">
-          </div>
-          <input class="nl-in" type="text" id="nl-city" placeholder="Your city in Canada (optional) — مدينتك في كندا (اختياري)">
-          <button class="nl-btn" onclick="submitNL()">Subscribe Free — اشترك مجاناً</button>
-          <p class="nl-note">Free forever · No spam · Unsubscribe anytime — مجاني دائماً · بلا إزعاج · إلغاء في أي وقت</p>
-        </div>
-        <div class="nl-thanks" id="nl-thanks">
-          <p>شكراً! Thank you!</p>
-          <p>Check your email for the free guides — تحقق من بريدك لاستلام الأدلة</p>
-        </div>
+        <input type="text" placeholder="Your name" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 40px;">
+        <input type="email" placeholder="Email" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 40px;">
+        <button class="btn-primary" style="width: 100%;" onclick="alert('Demo: your email would be saved. No backend yet.')">Subscribe Free</button>
+        <p style="font-size: 12px; margin-top: 12px; color: #5a6874;">Free · No spam · Unsubscribe anytime</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARTNERS -->
-<div class="partners">
-  <div class="container">
-    <p class="partners-lbl">Target grant funders & institutional partners</p>
-    <div class="partners-row">
-      <div class="p-badge"><div class="p-dot"></div><div class="p-name">Law Foundation<br>of Alberta</div></div>
-      <div class="p-badge"><div class="p-dot"></div><div class="p-name">Alberta<br>Lottery Fund</div></div>
-      <div class="p-badge"><div class="p-dot"></div><div class="p-name">IRCC<br>Settlement</div></div>
-      <div class="p-badge"><div class="p-dot"></div><div class="p-name">Justice<br>Canada</div></div>
-      <div class="p-badge"><div class="p-dot"></div><div class="p-name">United Way<br>Alberta</div></div>
-      <div class="p-badge"><div class="p-dot"></div><div class="p-name">Canadian Bar<br>Association</div></div>
-    </div>
-    <p class="partners-note">Settlement agency, mosque, or legal organization? <a href="mailto:khalid@canadalawarabic.ca">Partner with us →</a></p>
-  </div>
-</div>
-
-<!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="/mnt/user-data/uploads/final_logo_Canadian_Law_in_Arabic.png" alt="Canada Law in Arabic">
-          <div class="footer-logo-text">
-            <span class="en">Canada Law in Arabic Foundation</span>
-            <span class="arn">قانون كندا بالعربي</span>
-          </div>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="images/logo.png" alt="logo" style="height: 48px;" onerror="this.src='https://placehold.co/48x48'">
+          <div><strong style="color: white;">Canada Law in Arabic Foundation</strong><br><span style="font-family: 'Tajawal';">قانون كندا بالعربي</span></div>
         </div>
-        <p>Free, credible, trilingual legal education for Arabic-speaking Canadians. Federally incorporated non-profit under the Canada Not-for-profit Corporations Act. CRA charitable status application in progress.</p>
-        <p class="disc">All content is general legal education only and does not constitute legal advice. For individual legal matters, consult a qualified lawyer licensed in your province. — كل المحتوى للتثقيف العام فقط وليس استشارة قانونية.</p>
+        <p style="max-width: 300px; margin-top: 16px;">Free, credible, trilingual legal and civic education for Arabic-speaking Canadians. Federally incorporated non-profit.</p>
       </div>
-      <div class="footer-col">
-        <h4>Legal Topics</h4>
-        <ul>
-          <li><a href="#pillars">Family Law</a></li>
-          <li><a href="#pillars">Tenancy Rights</a></li>
-          <li><a href="#pillars">Employment Law</a></li>
-          <li><a href="#pillars">Real Estate</a></li>
-          <li><a href="#pillars">Accidents</a></li>
-          <li><a href="#pillars">Immigration</a></li>
-          <li><a href="#pillars">Wills & Estates</a></li>
-          <li><a href="#pillars">Consumer Rights</a></li>
+      <div>
+        <h4 style="color: white;">Topics</h4>
+        <ul style="list-style: none; margin-top: 12px;">
+          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Family Law</a></li>
+          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Tenancy Rights</a></li>
+          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Employment Law</a></li>
+          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Criminal Law</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Foundation</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#guides">Free Guides</a></li>
-          <li><a href="#course">Online Course</a></li>
-          <li><a href="#survey">Impact Survey</a></li>
-          <li><a href="#newsletter">Newsletter</a></li>
-          <li><a href="mailto:khalid@canadalawarabic.ca">Partner with us</a></li>
-          <li><a href="mailto:khalid@canadalawarabic.ca">Contact</a></li>
+      <div>
+        <h4 style="color: white;">Foundation</h4>
+        <ul style="list-style: none; margin-top: 12px;">
+          <li><a href="#about" style="color: #94a3b8; text-decoration: none;">About</a></li>
+          <li><a href="#guides" style="color: #94a3b8; text-decoration: none;">Guides</a></li>
+          <li><a href="#course" style="color: #94a3b8; text-decoration: none;">Course</a></li>
+          <li><a href="#power-series" style="color: #94a3b8; text-decoration: none;">Power Series</a></li>
         </ul>
+      </div>
+      <div>
+        <h4 style="color: white;">Follow</h4>
+        <div style="margin-top: 12px;">
+          <a href="https://instagram.com/canadalawarabic" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">Instagram</a>
+          <a href="https://tiktok.com/@canadalawarabic" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">TikTok</a>
+          <a href="https://youtube.com/@canadalawarabic" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">YouTube</a>
+          <a href="https://facebook.com/canadalawarabic" style="color: #94a3b8; text-decoration: none;">Facebook</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Canada Law in Arabic Foundation — قانون كندا بالعربي · Federally incorporated under the Canada Not-for-profit Corporations Act · canadalawarabic.ca</p>
-      <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
-        <a href="#">Facebook</a>
-      </div>
+    <div style="border-top: 1px solid #1e293b; margin-top: 32px; padding-top: 24px; text-align: center; font-size: 13px;">
+      © 2026 Canada Law in Arabic Foundation · Registered office: 96 Chaparral Cir SE, Calgary, AB T2X 3P5 · canadalawarabic.ca
     </div>
   </div>
 </footer>
-
-<script>
-function submitSurvey(){
-  if(!document.querySelector('input[name=q1]:checked')||!document.querySelector('input[name=q2]:checked')||!document.querySelector('input[name=q3]:checked')||!document.querySelector('input[name=q4]:checked')){
-    alert('Please answer questions 1–4.\nيرجى الإجابة على الأسئلة 1-4.');return;
-  }
-  document.getElementById('s-form').style.display='none';
-  document.getElementById('s-thanks').style.display='block';
-}
-function submitNL(){
-  const e=document.getElementById('nl-email').value.trim();
-  if(!e||!e.includes('@')){alert('Please enter a valid email.\nيرجى إدخال بريد إلكتروني صحيح.');return;}
-  document.getElementById('nl-form').style.display='none';
-  document.getElementById('nl-thanks').style.display='block';
-}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
-  });
-});
-</script>
 </body>
 </html>
