@@ -173,39 +173,6 @@
     padding: 32px;
     border-top: 4px solid var(--red);
   }
-  .subscribe-guide {
-    background: #F1F5F9;
-    border-radius: 32px;
-    padding: 40px;
-    margin-top: 48px;
-    text-align: center;
-  }
-  .subscribe-guide h3 {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-  }
-  .subscribe-guide .ar {
-    font-family: 'Tajawal';
-    font-size: 1.3rem;
-    color: #475569;
-    margin-bottom: 16px;
-  }
-  .subscribe-guide p {
-    color: #334155;
-    margin-bottom: 24px;
-  }
-  .subscribe-form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .subscribe-form input {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 40px;
-    font-size: 1rem;
-  }
   footer {
     background: #0F172A;
     color: #94a3b8;
@@ -216,7 +183,7 @@
     .hero-grid, .two-columns { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
     .nav-links { display: none; }
-    .subscribe-guide { padding: 24px; }
+    .guides-grid { grid-template-columns: 1fr; }
   }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -317,7 +284,7 @@
       <p style="color: #5a6874;">أدلة بالصوت والصورة والكتاب – أكثر من ٢٠ دليلاً</p>
     </div>
 
-    <!-- Only 4 example guides -->
+    <!-- 4 example guides -->
     <div class="guides-grid">
       <div class="guide-card">
         <h3>Arrested? 7 Things You Must Say</h3>
@@ -345,20 +312,17 @@
       </div>
     </div>
 
-    <!-- Plus 20+ more guides message -->
-    <div style="text-align: center; margin-top: 40px; padding: 32px; background: #F1F5F9; border-radius: 24px;">
-      <p style="font-size: 1.1rem; font-weight: 500;">Plus 20+ more video+PDF guides in progress</p>
-      <p style="color: #475569; margin: 8px 0 16px;">Criminal law, business, marketing, taxation, and more – all free.</p>
-    </div>
-
-    <!-- NEWSLETTER FORM DIRECTLY UNDER GUIDES (moved here) -->
-    <div class="subscribe-guide" id="subscribe-form">
-      <h3>Get all guides free — one per month</h3>
-      <div class="ar">احصل على جميع الأدلة مجاناً — دليل كل شهر</div>
-      <p>Subscribe to receive free PDF guides, early access to new workshops, and a monthly newsletter. One guide every month. No spam.</p>
-      <div class="subscribe-form">
-        <input type="text" placeholder="Your name | اسمك">
-        <input type="email" placeholder="Email | البريد الإلكتروني">
+    <!-- Merged subscription block -->
+    <div id="subscribe-form" style="text-align: center; margin-top: 48px; padding: 40px; background: #F1F5F9; border-radius: 32px;">
+      <p style="font-size: 1.2rem; font-weight: 700;">🔥 Coming soon: 20+ more video + PDF guides</p>
+      <p style="font-size: 1rem; color: #1e293b; margin-top: 4px;">Criminal law · Business & contracts · Marketing rules · Taxes · Wills & estates · Immigration · and much more</p>
+      <p style="font-family: 'Tajawal'; font-size: 1.2rem; font-weight: 500; margin: 12px 0 8px;">🔥 قريباً: أكثر من ٢٠ دليلاً بالفيديو والكتاب</p>
+      <p style="font-family: 'Tajawal'; font-size: 1rem; color: #1e293b;">القانون الجنائي · العقود التجارية · قواعد التسويق · الضرائب · الوصايا · الهجرة · والمزيد</p>
+      
+      <div style="max-width: 500px; margin: 32px auto 0;">
+        <p style="font-weight: 600; margin-bottom: 16px;">📧 Subscribe now – get each guide first | اشترك الآن – كن أول من يحصل على كل دليل</p>
+        <input type="text" placeholder="Your name | اسمك" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #cbd5e1; border-radius: 40px;">
+        <input type="email" placeholder="Email | البريد الإلكتروني" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #cbd5e1; border-radius: 40px;">
         <button class="btn-primary" style="width: 100%;" onclick="alert('Demo: your email would be saved. No backend yet.')">Subscribe Free | اشترك مجاناً</button>
         <p style="font-size: 12px; margin-top: 12px; color: #5a6874;">Free · No spam · Unsubscribe anytime | مجاني · لا بريد مزعج · إلغاء في أي وقت</p>
         <p style="margin-top: 16px; font-weight: 500;">📺 Be the first to watch the video and download the PDF guide | كن أول من يشاهد الفيديو ويحمل الدليل</p>
@@ -367,22 +331,47 @@
   </div>
 </section>
 
+<!-- UPDATED COURSE SECTION: BILINGUAL LIST -->
 <section id="course" class="bg-light">
   <div class="container">
     <div class="two-columns">
       <div>
         <h2 style="font-size: 2rem;">Canadian Law Fundamentals for Newcomers</h2>
         <p>A complete 8+ unit free course covering everything a newcomer needs — from your fundamental rights to family law, tenancy, employment, and beyond. Self‑paced. In Arabic.</p>
-        <ul style="margin-top: 20px; list-style: none;">
-          <li>✓ The Canadian Legal System</li>
-          <li>✓ Your Fundamental Rights & Charter</li>
-          <li>✓ Family Law in Canada</li>
-          <li>✓ Tenancy & Housing Rights</li>
-          <li>✓ Real Estate Transactions</li>
-          <li>✓ Employment Law</li>
-          <li>✓ Driving & Traffic Law</li>
-          <li>✓ Dealing with Police & Authorities</li>
-        </ul>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px;">
+          <div>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: 12px;">✓ The Canadian Legal System</li>
+              <li style="margin-bottom: 12px;">✓ Your Fundamental Rights & Charter</li>
+              <li style="margin-bottom: 12px;">✓ Family Law in Canada</li>
+              <li style="margin-bottom: 12px;">✓ Tenancy & Housing Rights</li>
+            </ul>
+          </div>
+          <div>
+            <ul style="list-style: none; font-family: 'Tajawal'; direction: rtl; text-align: right;">
+              <li style="margin-bottom: 12px;">✓ النظام القانوني الكندي</li>
+              <li style="margin-bottom: 12px;">✓ حقوقك الأساسية والميثاق</li>
+              <li style="margin-bottom: 12px;">✓ قانون الأسرة في كندا</li>
+              <li style="margin-bottom: 12px;">✓ حقوق المستأجر والسكن</li>
+            </ul>
+          </div>
+          <div>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: 12px;">✓ Real Estate Transactions</li>
+              <li style="margin-bottom: 12px;">✓ Employment Law</li>
+              <li style="margin-bottom: 12px;">✓ Driving & Traffic Law</li>
+              <li style="margin-bottom: 12px;">✓ Dealing with Police & Authorities</li>
+            </ul>
+          </div>
+          <div>
+            <ul style="list-style: none; font-family: 'Tajawal'; direction: rtl; text-align: right;">
+              <li style="margin-bottom: 12px;">✓ المعاملات العقارية</li>
+              <li style="margin-bottom: 12px;">✓ قانون العمل</li>
+              <li style="margin-bottom: 12px;">✓ قانون السير والمرور</li>
+              <li style="margin-bottom: 12px;">✓ التعامل مع الشرطة والسلطات</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="dark-card" style="background: var(--blue-dark); color: white;">
         <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; text-align: right; direction: rtl;">دورة مجانية: أساسيات القانون الكندي للمهاجرين</h3>
