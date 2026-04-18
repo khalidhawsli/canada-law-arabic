@@ -81,13 +81,13 @@
     justify-content: flex-end;
   }
 
-  /* ── Disclaimer bar ── */
+  /* Disclaimer bar */
   .disclaimer-bar {
     background: #FEF9EC;
     border-bottom: 1px solid #F3DFA0;
-    padding: 8px 24px;
+    padding: 8px 48px 8px 24px;
     text-align: center;
-    font-size: 12.5px;
+    font-size: 12px;
     color: #7A5C10;
     line-height: 1.5;
     position: fixed;
@@ -95,24 +95,44 @@
     left: 0;
     right: 0;
     z-index: 200;
+    transition: transform 0.3s ease;
+  }
+  .disclaimer-bar.hidden {
+    transform: translateY(-100%);
   }
   .disclaimer-bar .ar {
     font-family: 'Tajawal', system-ui;
-    font-size: 13px;
+    font-size: 12px;
     display: block;
     margin-top: 2px;
   }
+  .disclaimer-close {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7A5C10;
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px 6px;
+    opacity: 0.6;
+  }
+  .disclaimer-close:hover { opacity: 1; }
 
   /* Navigation */
   nav {
     position: fixed;
-    top: 44px; /* disclaimer bar height */
+    top: 0;
     left: 0;
     right: 0;
     background: var(--blue-dark);
     padding: 12px 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: top 0.3s ease;
   }
   .nav-inner {
     display: flex;
@@ -170,7 +190,7 @@
 
   /* Hero */
   .hero {
-    padding-top: 164px; /* disclaimer 44px + nav ~80px + some breathing room */
+    padding-top: 160px;
     background: linear-gradient(135deg, #0B2B5C 0%, #12376E 100%);
     color: white;
   }
@@ -355,21 +375,18 @@
     .guides-header { padding: 16px; }
     .hero-buttons, .hero-buttons-ar { justify-content: center; }
 
-    .disclaimer-bar { font-size: 11px; padding: 6px 12px; }
-    nav { top: 52px; }
-    .hero { padding-top: 172px; }
+    .disclaimer-bar { font-size: 11px; padding: 6px 40px 6px 12px; }
 
     /* Mobile menu */
     .menu-toggle { display: block; }
     .nav-links {
       position: fixed;
-      top: 132px; /* disclaimer + nav */
       left: -100%;
       width: 100%;
       background: var(--blue-dark);
       flex-direction: column;
       gap: 0;
-      transition: 0.3s;
+      transition: left 0.3s;
       padding: 20px 0;
       z-index: 99;
     }
@@ -394,10 +411,11 @@
 </head>
 <body>
 
-<!-- ── DISCLAIMER BAR ── -->
-<div class="disclaimer-bar">
-  The content on this site is for general educational purposes only and does not constitute legal advice. No solicitor-client relationship is created by accessing this content. For advice about your specific situation, consult a licensed lawyer in your province.
-  <span class="ar">المحتوى على هذا الموقع للأغراض التعليمية العامة فقط ولا يُعدّ استشارة قانونية. لا تنشأ أي علاقة بين محامٍ وموكّل من خلال الاطلاع على هذا المحتوى. للمشورة حول وضعك الخاص، تواصل مع محامٍ مرخّص في مقاطعتك.</span>
+<!-- DISCLAIMER BAR -->
+<div class="disclaimer-bar" id="disclaimerBar">
+  The content on this site is for general educational purposes only and does not constitute legal advice. No solicitor-client relationship is created. Consult a licensed lawyer in your province for advice on your specific situation.
+  <span class="ar">المحتوى للأغراض التعليمية العامة فقط وليس استشارة قانونية. للمشورة حول وضعك الخاص، تواصل مع محامٍ مرخّص في مقاطعتك.</span>
+  <button class="disclaimer-close" id="disclaimerClose" aria-label="Dismiss">&#x2715;</button>
 </div>
 
 <nav>
@@ -450,7 +468,7 @@
   </div>
   <div>
     <div class="stat-number">6</div>
-    <div>Guides — launching soon</div>
+    <div>Guides, launching soon</div>
   </div>
   <div>
     <div class="stat-number">8+</div>
@@ -523,7 +541,7 @@
 <section id="guides">
   <div class="container">
     <div class="guides-header">
-      <h2>📋 Free Guides — launching soon</h2>
+      <h2>📋 Free Guides, launching soon</h2>
       <p>PDF guides in Arabic, covering the legal situations newcomers face most | أدلة PDF بالعربية حول أهم المواقف القانونية</p>
     </div>
 
@@ -656,10 +674,10 @@
   <div class="container">
     <div class="two-columns">
       <div>
-        <div style="color: var(--red); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 13px;">New Series — سلسلة جديدة</div>
+        <div style="color: var(--red); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 13px;">New Series | سلسلة جديدة</div>
         <h2 style="font-size: 2rem; margin: 16px 0;">From Home to Parliament<br><span style="font-family: 'Tajawal'; font-size: 1.7rem;">من البيت إلى البرلمان</span></h2>
         <p>A new video series teaching Arabic‑speaking Canadians how to build real political power. Learn how federal, provincial, and municipal elections work. How to register voters, organize get‑out‑the‑vote drives, pressure elected officials, file human rights complaints, and even run for office.</p>
-        <p style="margin-top: 12px; opacity: 0.8; font-size: 14px;">Coming 2026 — free on YouTube, in Arabic with English subtitles.<br>قادم ٢٠٢٦ — مجاناً على يوتيوب، بالعربية مع ترجمة إنجليزية.</p>
+        <p style="margin-top: 12px; opacity: 0.8; font-size: 14px;">Coming 2026, free on YouTube, in Arabic with English subtitles.<br>قادم ٢٠٢٦، مجاناً على يوتيوب، بالعربية مع ترجمة إنجليزية.</p>
         <a href="#subscribe-form" class="btn-primary" style="margin-top: 24px; display: inline-block;">Notify me when launched | أخبرني عند الإطلاق</a>
       </div>
       <div class="dark-card">
@@ -667,7 +685,7 @@
         <p style="font-size: 13px; opacity: 0.7; margin-bottom: 8px;">Episode topics | موضوعات الحلقات</p>
         <ul class="episode-list">
           <li><span class="ep-num">01</span><div><strong>How Canada's three levels of government work</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تعمل المستويات الحكومية الثلاثة في كندا</span></div></li>
-          <li><span class="ep-num">02</span><div><strong>Federal, provincial &amp; municipal elections — your vote</strong><br><span style="font-family:'Tajawal'; font-size:13px;">الانتخابات الفيدرالية والمحلية — صوتك يُحدث فرقاً</span></div></li>
+          <li><span class="ep-num">02</span><div><strong>Federal, provincial &amp; municipal elections: your vote</strong><br><span style="font-family:'Tajawal'; font-size:13px;">الانتخابات الفيدرالية والمحلية: صوتك يُحدث فرقاً</span></div></li>
           <li><span class="ep-num">03</span><div><strong>How to register voters &amp; run a get-out-the-vote drive</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تسجّل الناخبين وتنظّم حملة انتخابية</span></div></li>
           <li><span class="ep-num">04</span><div><strong>How to pressure your MP, MPP, or city councillor</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تضغط على ممثلك المنتخب وتحاسبه</span></div></li>
           <li><span class="ep-num">05</span><div><strong>Filing a human rights complaint in Canada</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تقدّم شكوى حقوق إنسان في كندا</span></div></li>
@@ -721,7 +739,7 @@
     </div>
     <div style="border-top: 1px solid #1e293b; margin-top: 32px; padding-top: 24px; font-size: 12px; line-height: 1.7;">
       <div style="text-align: center; margin-bottom: 10px;">
-        <strong style="color: #64748b;">Educational content only — not legal advice. | محتوى تعليمي فقط — ليس استشارة قانونية.</strong>
+        <strong style="color: #64748b;">Educational content only. Not legal advice. | محتوى تعليمي فقط. ليس استشارة قانونية.</strong>
       </div>
       <div style="text-align: center;">
         © 2026 Canada Law in Arabic Foundation · Registered office: 96 Chaparral Cir SE, Calgary, AB T2X 3P5 · <a href="https://canadalawarabic.ca" style="color: #64748b;">canadalawarabic.ca</a>
@@ -731,18 +749,46 @@
 </footer>
 
 <script>
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
+  const disclaimerBar = document.getElementById('disclaimerBar');
+  const disclaimerClose = document.getElementById('disclaimerClose');
+  const nav = document.querySelector('nav');
   const navLinks = document.getElementById('navLinks');
+  const menuToggle = document.getElementById('menuToggle');
+  const hero = document.querySelector('.hero');
+
+  function getBarHeight() {
+    return disclaimerBar.classList.contains('hidden') ? 0 : disclaimerBar.offsetHeight;
+  }
+
+  function updateLayout() {
+    const barH = getBarHeight();
+    const navH = nav.offsetHeight;
+    nav.style.top = barH + 'px';
+    navLinks.style.top = (barH + navH) + 'px';
+    hero.style.paddingTop = (barH + navH + 24) + 'px';
+  }
+
+  // Dismiss disclaimer
+  disclaimerClose.addEventListener('click', () => {
+    disclaimerBar.classList.add('hidden');
+    setTimeout(updateLayout, 310); // after transition
+  });
+
+  // Mobile menu toggle
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
+
   // Close menu when a link is clicked
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
     });
   });
+
+  // Run on load and resize
+  updateLayout();
+  window.addEventListener('resize', updateLayout);
 </script>
 </body>
 </html>
