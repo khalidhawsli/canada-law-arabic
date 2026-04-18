@@ -64,7 +64,7 @@
     transition: all 0.2s;
   }
   .btn-outline-light:hover { border-color: white; background: rgba(255,255,255,0.1); }
-  
+
   .hero-buttons {
     display: flex;
     flex-direction: row;
@@ -80,11 +80,33 @@
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  
+
+  /* ── Disclaimer bar ── */
+  .disclaimer-bar {
+    background: #FEF9EC;
+    border-bottom: 1px solid #F3DFA0;
+    padding: 8px 24px;
+    text-align: center;
+    font-size: 12.5px;
+    color: #7A5C10;
+    line-height: 1.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+  }
+  .disclaimer-bar .ar {
+    font-family: 'Tajawal', system-ui;
+    font-size: 13px;
+    display: block;
+    margin-top: 2px;
+  }
+
   /* Navigation */
   nav {
     position: fixed;
-    top: 0;
+    top: 44px; /* disclaimer bar height */
     left: 0;
     right: 0;
     background: var(--blue-dark);
@@ -109,7 +131,7 @@
   .logo img { height: 56px; width: auto; }
   .logo-text .en { font-weight: 700; font-size: 20px; color: white; }
   .logo-text .ar { font-size: 15px; color: rgba(255,255,255,0.75); }
-  
+
   /* Desktop nav links */
   .nav-links {
     display: flex;
@@ -128,7 +150,7 @@
     border-radius: 40px;
     color: white;
   }
-  
+
   /* Mobile menu button */
   .menu-toggle {
     display: none;
@@ -145,10 +167,10 @@
     margin: 5px 0;
     transition: 0.3s;
   }
-  
+
   /* Hero */
   .hero {
-    padding-top: 120px;
+    padding-top: 164px; /* disclaimer 44px + nav ~80px + some breathing room */
     background: linear-gradient(135deg, #0B2B5C 0%, #12376E 100%);
     color: white;
   }
@@ -162,7 +184,7 @@
   .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
   .hero-ar { direction: rtl; text-align: right; font-family: 'Tajawal', system-ui; }
   .hero-ar h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-  
+
   /* Stats */
   .stats-grid {
     display: grid;
@@ -173,7 +195,8 @@
     padding: 32px 0;
   }
   .stat-number { font-size: 2.5rem; font-weight: 800; }
-  
+  .stat-note { font-size: 10px; opacity: 0.6; font-style: italic; margin-top: 2px; }
+
   /* Pillars */
   .pillars-grid {
     display: grid;
@@ -191,7 +214,7 @@
   }
   .pillar-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
   .pillar-card .ar { font-family: 'Tajawal', system-ui; font-size: 0.85rem; color: #5a6874; }
-  
+
   /* Social */
   .social-follow {
     text-align: center;
@@ -215,7 +238,7 @@
     transition: color 0.2s;
   }
   .social-icons a:hover { color: var(--red); }
-  
+
   /* Guides */
   .guides-header {
     text-align: center;
@@ -252,7 +275,17 @@
     border-radius: 20px;
     margin: 8px 0;
   }
-  
+  .guide-area-tag {
+    display: inline-block;
+    background: #EEF2FF;
+    color: #3730A3;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
   /* Two columns */
   .two-columns {
     display: grid;
@@ -277,7 +310,33 @@
     font-weight: 800;
     color: var(--red);
   }
-  
+
+  /* Parliament series episodes */
+  .episode-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+  .episode-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  .episode-list li:last-child { border-bottom: none; }
+  .ep-num {
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
   /* Footer */
   footer {
     background: #0F172A;
@@ -285,7 +344,8 @@
     padding: 48px 0 24px;
     margin-top: 40px;
   }
-  
+  footer li { margin-bottom: 8px; }
+
   /* Responsive */
   @media (max-width: 768px) {
     .hero-grid, .two-columns { grid-template-columns: 1fr; }
@@ -294,12 +354,16 @@
     .pillars-grid { grid-template-columns: repeat(2,1fr); }
     .guides-header { padding: 16px; }
     .hero-buttons, .hero-buttons-ar { justify-content: center; }
-    
+
+    .disclaimer-bar { font-size: 11px; padding: 6px 12px; }
+    nav { top: 52px; }
+    .hero { padding-top: 172px; }
+
     /* Mobile menu */
     .menu-toggle { display: block; }
     .nav-links {
       position: fixed;
-      top: 80px;
+      top: 132px; /* disclaimer + nav */
       left: -100%;
       width: 100%;
       background: var(--blue-dark);
@@ -309,9 +373,7 @@
       padding: 20px 0;
       z-index: 99;
     }
-    .nav-links.active {
-      left: 0;
-    }
+    .nav-links.active { left: 0; }
     .nav-links a {
       display: block;
       padding: 15px 24px;
@@ -332,10 +394,16 @@
 </head>
 <body>
 
+<!-- ── DISCLAIMER BAR ── -->
+<div class="disclaimer-bar">
+  The content on this site is for general educational purposes only and does not constitute legal advice. No solicitor-client relationship is created by accessing this content. For advice about your specific situation, consult a licensed lawyer in your province.
+  <span class="ar">المحتوى على هذا الموقع للأغراض التعليمية العامة فقط ولا يُعدّ استشارة قانونية. لا تنشأ أي علاقة بين محامٍ وموكّل من خلال الاطلاع على هذا المحتوى. للمشورة حول وضعك الخاص، تواصل مع محامٍ مرخّص في مقاطعتك.</span>
+</div>
+
 <nav>
   <div class="nav-inner">
     <a href="#home" class="logo">
-      <img src="images/logo.png" alt="Canada Law in Arabic" onerror="this.src='https://placehold.co/56x56?text=CLA'">
+      <img src="images/logo.png" alt="Canada Law in Arabic" onerror="this.src='https://canadalawarabic.ca/images/logo.png'">
       <div class="logo-text"><div class="en">Canada Law in Arabic</div><div class="ar">قانون كندا بالعربي</div></div>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
@@ -376,11 +444,26 @@
 </section>
 
 <div class="stats-grid">
-  <div><div class="stat-number">400+</div><div>Reels</div></div>
-  <div><div class="stat-number">8+</div><div>Legal areas</div></div>
-  <div><div class="stat-number">20+</div><div>Guides</div></div>
-  <div><div class="stat-number">8+</div><div>Course units</div></div>
-  <div><div class="stat-number">600K+</div><div>Arabic speakers in Canada</div></div>
+  <div>
+    <div class="stat-number">8+</div>
+    <div>Legal areas</div>
+  </div>
+  <div>
+    <div class="stat-number">6</div>
+    <div>Guides — launching soon</div>
+  </div>
+  <div>
+    <div class="stat-number">8+</div>
+    <div>Course units</div>
+  </div>
+  <div>
+    <div class="stat-number">2</div>
+    <div>Content series</div>
+  </div>
+  <div>
+    <div class="stat-number">600K+</div>
+    <div>Arabic speakers in Canada</div>
+  </div>
 </div>
 
 <section id="about">
@@ -392,12 +475,15 @@
         <div style="background: #F1F5F9; padding: 20px; border-left: 4px solid var(--red); margin-top: 24px;">
           <strong>Delivered by a lawyer.</strong> Founder Khalid Alhawasli, LL.M. (Osgoode Hall), pursuing Alberta licensure.
         </div>
+        <div style="background: #FEF9EC; border: 1px solid #F3DFA0; padding: 14px 18px; border-radius: 12px; margin-top: 16px; font-size: 13px; color: #7A5C10;">
+          ⚠️ <strong>Educational content only.</strong> Nothing on this site is legal advice. Consult a licensed lawyer in your province for advice about your specific situation.
+        </div>
       </div>
       <div style="background: #F8FAFE; padding: 32px; border-radius: 24px; border-top: 4px solid var(--red);">
         <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; text-align: right; direction: rtl;">عن المؤسسة</h3>
-        <p style="font-family: 'Tajawal'; direction: rtl; text-align: right;">أكثر من ٦٠٠ ألف ناطق بالعربية في كندا، ومع ذلك لا يوجد تقريباً أي مصدر مجاني وموثوق للتثقيف القانوني باللغة العربية. نعمل على سد هذه الفجوة.</p>
-        <div style="background: #FFE8E6; padding: 12px; border-radius: 12px; margin-top: 16px;">
-          <p style="font-family: 'Tajawal'; font-size: 13px; color: #B91C1C; direction: rtl; text-align: right;">تنبيه: هذا المحتوى للتثقيف العام فقط وليس استشارة قانونية.</p>
+        <p style="font-family: 'Tajawal'; direction: rtl; text-align: right;">أكثر من ٦٠٠ ألف ناطق بالعربية في كندا، ومع ذلك لا يوجد تقريباً أي مصدر مجاني وموثوق للتثقيف القانوني باللغة العربية. نعمل على سد هذه الفجوة بمحتوى مجاني بالعربية والإنجليزية والفرنسية.</p>
+        <div style="background: #FFE8E6; padding: 14px 16px; border-radius: 12px; margin-top: 16px;">
+          <p style="font-family: 'Tajawal'; font-size: 13px; color: #B91C1C; direction: rtl; text-align: right;">⚠️ تنبيه: هذا المحتوى للتثقيف العام فقط وليس استشارة قانونية. للحصول على مشورة حول وضعك الخاص، تواصل مع محامٍ مرخّص في مقاطعتك.</p>
         </div>
       </div>
     </div>
@@ -414,10 +500,10 @@
       <div class="pillar-card"><h3>Family Law</h3><div class="ar">قانون الأسرة</div></div>
       <div class="pillar-card"><h3>Tenancy Rights</h3><div class="ar">حقوق المستأجر</div></div>
       <div class="pillar-card"><h3>Employment Law</h3><div class="ar">قانون العمل</div></div>
-      <div class="pillar-card"><h3>Accidents & Injury</h3><div class="ar">الحوادث والإصابات</div></div>
-      <div class="pillar-card"><h3>Real Estate & Mortgages</h3><div class="ar">العقارات والرهون</div></div>
+      <div class="pillar-card"><h3>Accidents &amp; Injury</h3><div class="ar">الحوادث والإصابات</div></div>
+      <div class="pillar-card"><h3>Real Estate &amp; Mortgages</h3><div class="ar">العقارات والرهون</div></div>
       <div class="pillar-card"><h3>Immigration Law</h3><div class="ar">قانون الهجرة</div></div>
-      <div class="pillar-card"><h3>Wills, Estates & Trusts</h3><div class="ar">الوصايا والتركات</div></div>
+      <div class="pillar-card"><h3>Wills, Estates &amp; Trusts</h3><div class="ar">الوصايا والتركات</div></div>
       <div class="pillar-card"><h3>Condominium Law</h3><div class="ar">قانون الشقق</div></div>
     </div>
 
@@ -428,6 +514,7 @@
         <a href="https://tiktok.com/@canadalawarabic" target="_blank">TikTok</a>
         <a href="https://youtube.com/@canadalawarabic" target="_blank">YouTube</a>
         <a href="https://facebook.com/canadalawarabic" target="_blank">Facebook</a>
+        <a href="https://linkedin.com/company/canadalawarabic" target="_blank">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -436,41 +523,76 @@
 <section id="guides">
   <div class="container">
     <div class="guides-header">
-      <h2>🎬 Video + PDF guides (20+ in total)</h2>
-      <p>أدلة بالصوت والصورة والكتاب – أكثر من ٢٠ دليلاً</p>
+      <h2>📋 Free Guides — launching soon</h2>
+      <p>PDF guides in Arabic, covering the legal situations newcomers face most | أدلة PDF بالعربية حول أهم المواقف القانونية</p>
     </div>
 
     <div class="guides-grid">
+
       <div class="guide-card">
-        <h3>Arrested? 7 Things You Must Say</h3>
-        <div class="ar-title">اعتقال؟ ٧ أشياء يجب أن تقولها</div>
+        <div class="guide-area-tag">Criminal / الجنائي</div>
+        <h3>Arrested? 7 Things You Must Say (and Must Not Say)</h3>
+        <div class="ar-title">اعتقلت؟ ٧ أشياء يجب أن تقولها — وأشياء يجب أن تصمت عنها</div>
         <div class="badge-coming">Coming soon</div>
-        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+        <div style="margin-top: 12px; font-size: 13px; color: #5a6874;">Subscribe below to get this guide when it drops. | اشترك أدناه للحصول على الدليل عند صدوره.</div>
       </div>
+
       <div class="guide-card">
-        <h3>Start a Business: Sole Prop vs. Corporation</h3>
-        <div class="ar-title">الملكية الفردية أم الشركة؟</div>
+        <div class="guide-area-tag">Business / الأعمال</div>
+        <h3>Start a Business in Canada: Sole Proprietorship vs. Corporation</h3>
+        <div class="ar-title">كيف تبدأ عملاً تجارياً في كندا: الملكية الفردية أم الشركة؟</div>
         <div class="badge-coming">Coming soon</div>
-        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+        <div style="margin-top: 12px; font-size: 13px; color: #5a6874;">Subscribe below to get this guide when it drops.</div>
       </div>
+
       <div class="guide-card">
-        <h3>Tax Filing – Deadlines & Deductions</h3>
-        <div class="ar-title">تقديم الضرائب – مواعيد وخصومات</div>
+        <div class="guide-area-tag">Tax / الضرائب</div>
+        <h3>Tax Filing in Canada: Deadlines, Deductions &amp; What Newcomers Miss</h3>
+        <div class="ar-title">تقديم الضرائب في كندا: مواعيد وخصومات وأخطاء المهاجرين الشائعة</div>
         <div class="badge-coming">Coming soon</div>
-        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
+        <div style="margin-top: 12px; font-size: 13px; color: #5a6874;">Subscribe below to get this guide when it drops.</div>
       </div>
+
+      <div class="guide-card">
+        <div class="guide-area-tag">Family / الأسرة</div>
+        <h3>Separation &amp; Divorce in Canada: Your Rights from Day One</h3>
+        <div class="ar-title">الانفصال والطلاق في كندا: حقوقك من اليوم الأول</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px; color: #5a6874;">Subscribe below to get this guide when it drops.</div>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-area-tag">Tenancy / الإيجار</div>
+        <h3>Tenant Rights in Canada: What Your Landlord Cannot Do</h3>
+        <div class="ar-title">حقوق المستأجر في كندا: ما لا يحق لصاحب العقار فعله</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px; color: #5a6874;">Subscribe below to get this guide when it drops.</div>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-area-tag">Employment / العمل</div>
+        <h3>Your Employment Rights in Canada: Termination, Pay &amp; Discrimination</h3>
+        <div class="ar-title">حقوقك في العمل بكندا: الفصل والأجر والتمييز</div>
+        <div class="badge-coming">Coming soon</div>
+        <div style="margin-top: 12px; font-size: 13px; color: #5a6874;">Subscribe below to get this guide when it drops.</div>
+      </div>
+
     </div>
 
     <!-- First to Watch Signup Form -->
     <div id="subscribe-form" style="text-align: center; margin-top: 48px; padding: 40px; background: #F1F5F9; border-radius: 32px;">
       <h3 style="font-size: 1.8rem; margin-bottom: 8px;">🎬 First to Watch</h3>
-      <p style="font-size: 1rem; color: #1e293b;">Be the first when new videos drop – before anyone else.</p>
+      <p style="font-size: 1rem; color: #1e293b;">Be the first when new videos and guides drop – before anyone else.</p>
       <p style="font-family: 'Tajawal'; font-size: 1.2rem; margin: 8px 0 4px;">أول من يشاهد</p>
-      <p style="font-family: 'Tajawal'; font-size: 0.9rem; color: #1e293b;">كن أول من يعلم عند إصدار فيديوهات جديدة – قبل أي شخص آخر.</p>
-      
+      <p style="font-family: 'Tajawal'; font-size: 0.9rem; color: #1e293b;">كن أول من يعلم عند إصدار فيديوهات وأدلة جديدة – قبل أي شخص آخر.</p>
+
       <div style="max-width: 600px; margin: 32px auto 0;">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfvVFkHCdljxDy-EshnzQJp6306u39SFdUOjzEy4w23G-iPYw/viewform?embedded=true" width="100%" height="620" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
+
+      <p style="font-size: 11px; color: #94a3b8; margin-top: 16px; max-width: 480px; margin-left: auto; margin-right: auto;">
+        By subscribing you agree to receive email updates from Canada Law in Arabic Foundation. We will never sell or share your information. You may unsubscribe at any time. This site is operated in accordance with Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA).
+      </p>
     </div>
   </div>
 </section>
@@ -485,9 +607,9 @@
           <div>
             <ul style="list-style: none;">
               <li style="margin-bottom: 12px;">✓ The Canadian Legal System</li>
-              <li style="margin-bottom: 12px;">✓ Your Fundamental Rights & Charter</li>
+              <li style="margin-bottom: 12px;">✓ Your Fundamental Rights &amp; Charter</li>
               <li style="margin-bottom: 12px;">✓ Family Law in Canada</li>
-              <li style="margin-bottom: 12px;">✓ Tenancy & Housing Rights</li>
+              <li style="margin-bottom: 12px;">✓ Tenancy &amp; Housing Rights</li>
             </ul>
           </div>
           <div>
@@ -502,8 +624,8 @@
             <ul style="list-style: none;">
               <li style="margin-bottom: 12px;">✓ Real Estate Transactions</li>
               <li style="margin-bottom: 12px;">✓ Employment Law</li>
-              <li style="margin-bottom: 12px;">✓ Driving & Traffic Law</li>
-              <li style="margin-bottom: 12px;">✓ Dealing with Police & Authorities</li>
+              <li style="margin-bottom: 12px;">✓ Driving &amp; Traffic Law</li>
+              <li style="margin-bottom: 12px;">✓ Dealing with Police &amp; Authorities</li>
             </ul>
           </div>
           <div>
@@ -534,17 +656,23 @@
   <div class="container">
     <div class="two-columns">
       <div>
-        <div style="color: var(--red); font-weight: 600; letter-spacing: 1px;">NEW SERIES — من البيت إلى البرلمان</div>
-        <h2 style="font-size: 2rem; margin: 16px 0;">From Home to Parliament — من البيت إلى البرلمان</h2>
+        <div style="color: var(--red); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 13px;">New Series — سلسلة جديدة</div>
+        <h2 style="font-size: 2rem; margin: 16px 0;">From Home to Parliament<br><span style="font-family: 'Tajawal'; font-size: 1.7rem;">من البيت إلى البرلمان</span></h2>
         <p>A new video series teaching Arabic‑speaking Canadians how to build real political power. Learn how federal, provincial, and municipal elections work. How to register voters, organize get‑out‑the‑vote drives, pressure elected officials, file human rights complaints, and even run for office.</p>
-        <p style="margin-top: 16px;">Coming 2026 – free on YouTube, in Arabic with English subtitles.</p>
-        <a href="#subscribe-form" class="btn-primary" style="margin-top: 24px; display: inline-block;">Notify me when launched</a>
+        <p style="margin-top: 12px; opacity: 0.8; font-size: 14px;">Coming 2026 — free on YouTube, in Arabic with English subtitles.<br>قادم ٢٠٢٦ — مجاناً على يوتيوب، بالعربية مع ترجمة إنجليزية.</p>
+        <a href="#subscribe-form" class="btn-primary" style="margin-top: 24px; display: inline-block;">Notify me when launched | أخبرني عند الإطلاق</a>
       </div>
       <div class="dark-card">
-        <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; margin-bottom: 16px;">من البيت إلى البرلمان</h3>
-        <p style="font-family: 'Tajawal'; line-height: 1.7; opacity: 0.9;">سلسلة فيديوهات جديدة لتعليم الجاليات العربية في كندا كيفية بناء القوة السياسية. تعرّف على الانتخابات، نظّم حملات تسجيل الناخبين، اكتشف حقوقك، وترشح للمناصب.</p>
-        <a href="#subscribe-form" class="btn-primary" style="float: right; margin-top: 16px;">أخبرني عند الإطلاق</a>
-        <div style="clear: both;"></div>
+        <h3 style="font-family: 'Tajawal'; font-size: 1.5rem; margin-bottom: 4px; direction: rtl; text-align: right;">موضوعات السلسلة</h3>
+        <p style="font-size: 13px; opacity: 0.7; margin-bottom: 8px;">Episode topics | موضوعات الحلقات</p>
+        <ul class="episode-list">
+          <li><span class="ep-num">01</span><div><strong>How Canada's three levels of government work</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تعمل المستويات الحكومية الثلاثة في كندا</span></div></li>
+          <li><span class="ep-num">02</span><div><strong>Federal, provincial &amp; municipal elections — your vote</strong><br><span style="font-family:'Tajawal'; font-size:13px;">الانتخابات الفيدرالية والمحلية — صوتك يُحدث فرقاً</span></div></li>
+          <li><span class="ep-num">03</span><div><strong>How to register voters &amp; run a get-out-the-vote drive</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تسجّل الناخبين وتنظّم حملة انتخابية</span></div></li>
+          <li><span class="ep-num">04</span><div><strong>How to pressure your MP, MPP, or city councillor</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تضغط على ممثلك المنتخب وتحاسبه</span></div></li>
+          <li><span class="ep-num">05</span><div><strong>Filing a human rights complaint in Canada</strong><br><span style="font-family:'Tajawal'; font-size:13px;">كيف تقدّم شكوى حقوق إنسان في كندا</span></div></li>
+          <li><span class="ep-num">06</span><div><strong>Running for office: from nomination to election day</strong><br><span style="font-family:'Tajawal'; font-size:13px;">الترشح لمنصب انتخابي: من التسمية إلى يوم الاقتراع</span></div></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -555,10 +683,10 @@
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px;">
       <div>
         <div style="display: flex; align-items: center; gap: 12px;">
-          <img src="images/logo.png" alt="logo" style="height: 48px;" onerror="this.src='https://placehold.co/48x48'">
+          <img src="images/logo.png" alt="Canada Law in Arabic Foundation logo" style="height: 48px;" onerror="this.src='https://canadalawarabic.ca/images/logo.png'">
           <div><strong style="color: white;">Canada Law in Arabic Foundation</strong><br><span style="font-family: 'Tajawal';">قانون كندا بالعربي</span></div>
         </div>
-        <p style="max-width: 300px; margin-top: 16px;">Free, credible, trilingual legal and civic education for Arabic-speaking Canadians. Federally incorporated non-profit.</p>
+        <p style="max-width: 300px; margin-top: 16px;">Free, credible, trilingual legal and civic education for Arabic-speaking Canadians. Federally incorporated non-profit · Corporation No. 1785540-1</p>
         <p style="margin-top: 12px;">Contact: <a href="mailto:khalid@canadalawarabic.ca" style="color: #94a3b8;">khalid@canadalawarabic.ca</a></p>
       </div>
       <div>
@@ -568,6 +696,7 @@
           <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Tenancy Rights</a></li>
           <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Employment Law</a></li>
           <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Real Estate</a></li>
+          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Wills &amp; Estates</a></li>
         </ul>
       </div>
       <div>
@@ -581,16 +710,22 @@
       </div>
       <div>
         <h4 style="color: white;">Follow</h4>
-        <div style="margin-top: 12px;">
-          <a href="https://instagram.com/canadalawarabic" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">Instagram</a>
-          <a href="https://tiktok.com/@canadalawarabic" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">TikTok</a>
-          <a href="https://youtube.com/@canadalawarabic" style="color: #94a3b8; text-decoration: none; margin-right: 16px;">YouTube</a>
-          <a href="https://facebook.com/canadalawarabic" style="color: #94a3b8; text-decoration: none;">Facebook</a>
+        <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+          <a href="https://instagram.com/canadalawarabic" target="_blank" style="color: #94a3b8; text-decoration: none;">Instagram</a>
+          <a href="https://tiktok.com/@canadalawarabic" target="_blank" style="color: #94a3b8; text-decoration: none;">TikTok</a>
+          <a href="https://youtube.com/@canadalawarabic" target="_blank" style="color: #94a3b8; text-decoration: none;">YouTube</a>
+          <a href="https://facebook.com/canadalawarabic" target="_blank" style="color: #94a3b8; text-decoration: none;">Facebook</a>
+          <a href="https://linkedin.com/company/canadalawarabic" target="_blank" style="color: #94a3b8; text-decoration: none;">LinkedIn</a>
         </div>
       </div>
     </div>
-    <div style="border-top: 1px solid #1e293b; margin-top: 32px; padding-top: 24px; text-align: center; font-size: 13px;">
-      © 2026 Canada Law in Arabic Foundation · Registered office: 96 Chaparral Cir SE, Calgary, AB T2X 3P5 · canadalawarabic.ca
+    <div style="border-top: 1px solid #1e293b; margin-top: 32px; padding-top: 24px; font-size: 12px; line-height: 1.7;">
+      <div style="text-align: center; margin-bottom: 10px;">
+        <strong style="color: #64748b;">Educational content only — not legal advice. | محتوى تعليمي فقط — ليس استشارة قانونية.</strong>
+      </div>
+      <div style="text-align: center;">
+        © 2026 Canada Law in Arabic Foundation · Registered office: 96 Chaparral Cir SE, Calgary, AB T2X 3P5 · <a href="https://canadalawarabic.ca" style="color: #64748b;">canadalawarabic.ca</a>
+      </div>
     </div>
   </div>
 </footer>
