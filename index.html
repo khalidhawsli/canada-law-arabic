@@ -47,6 +47,7 @@
     transition: background 0.2s;
     border: none;
     cursor: pointer;
+    text-align: center;
   }
   .btn-primary:hover { background: var(--red-bright); }
   .btn-outline-light {
@@ -57,17 +58,29 @@
     border-radius: 40px;
     text-decoration: none;
     font-weight: 500;
-  }
-  .btn-outline-light:hover { border-color: white; }
-  .badge-coming {
-    background: #e2e8f0;
-    color: #475569;
-    font-size: 11px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 600;
     display: inline-block;
+    text-align: center;
+    transition: all 0.2s;
   }
+  .btn-outline-light:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  
+  /* Buttons side by side */
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .hero-buttons-ar {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
   nav {
     position: fixed;
     top: 0;
@@ -191,11 +204,6 @@
   .guides-header p {
     color: #5a6874;
   }
-  .guides-header svg {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 8px;
-  }
   .guides-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
@@ -249,6 +257,7 @@
     .guides-grid { grid-template-columns: 1fr; }
     .pillars-grid { grid-template-columns: repeat(2,1fr); }
     .guides-header { padding: 16px; }
+    .hero-buttons, .hero-buttons-ar { justify-content: center; }
   }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -266,7 +275,7 @@
       <a href="#pillars">Topics</a>
       <a href="#guides">Guides</a>
       <a href="#course">Course</a>
-      <a href="#power-series">Power Series</a>
+      <a href="#power-series">From Home to Parliament</a>
       <a href="#subscribe-form" class="nav-cta">Subscribe</a>
     </div>
   </div>
@@ -278,13 +287,18 @@
       <div>
         <h1>Your legal rights in Canada — <span class="text-red">in Arabic</span></h1>
         <p>Canada Law in Arabic Foundation exists so that no Arabic‑speaking Canadian is excluded from legal protection, access to justice, or democratic participation by a language barrier. Free legal education across 8+ areas of law, plus civic training on elections, organizing, and accountability – from home to Parliament.</p>
-        <a href="#guides" class="btn-primary">Explore guides</a>
-        <a href="#power-series" class="btn-outline-light" style="margin-left: 12px;">Power series</a>
+        <div class="hero-buttons">
+          <a href="#guides" class="btn-primary">Explore guides</a>
+          <a href="#power-series" class="btn-outline-light">From Home to Parliament</a>
+        </div>
       </div>
       <div class="hero-ar">
         <h2>حقوقك القانونية في كندا — <span class="text-red">بالعربي</span></h2>
         <p>مؤسسة قانون كندا بالعربي موجودة لضمان ألا يُستبعد أي ناطق بالعربية من الحماية القانونية أو الوصول إلى العدالة أو المشاركة الديمقراطية بسبب اللغة. نقدم تثقيفاً قانونياً مجانياً في أكثر من ٨ مجالات، وتثقيفاً مدنياً حول الانتخابات والتنظيم والمحاسبة – من البيت إلى البرلمان.</p>
-        <a href="#guides" class="btn-primary">استكشف الأدلة</a>
+        <div class="hero-buttons-ar">
+          <a href="#guides" class="btn-primary">استكشف الأدلة</a>
+          <a href="#power-series" class="btn-outline-light">من البيت إلى البرلمان</a>
+        </div>
       </div>
     </div>
   </div>
@@ -336,7 +350,6 @@
       <div class="pillar-card"><h3>Condominium Law</h3><div class="ar">قانون الشقق</div></div>
     </div>
 
-    <!-- Follow us section (only reels) -->
     <div class="social-follow">
       <p>📱 Follow us to see the reels | تابعنا لمشاهدة الريلز</p>
       <div class="social-icons">
@@ -356,7 +369,7 @@
       <p>أدلة بالصوت والصورة والكتاب – أكثر من ٢٠ دليلاً</p>
     </div>
 
-    <!-- 4 example guides -->
+    <!-- Only 3 example guides -->
     <div class="guides-grid">
       <div class="guide-card">
         <h3>Arrested? 7 Things You Must Say</h3>
@@ -376,15 +389,8 @@
         <div class="badge-coming">Coming soon</div>
         <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
       </div>
-      <div class="guide-card">
-        <h3>Police Search: Warrant or Not?</h3>
-        <div class="ar-title">تفتيش الشرطة: مذكرة أم لا؟</div>
-        <div class="badge-coming">Coming soon</div>
-        <div style="margin-top: 12px; font-size: 13px;">📧 Subscribe to get PDF when ready</div>
-      </div>
     </div>
 
-    <!-- Merged subscription block -->
     <div id="subscribe-form" style="text-align: center; margin-top: 48px; padding: 40px; background: #F1F5F9; border-radius: 32px;">
       <p style="font-size: 1.2rem; font-weight: 700;">🔥 Coming soon: 20+ more video + PDF guides</p>
       <p style="font-size: 1rem; color: #1e293b; margin-top: 4px;">Family, tenancy, employment, accidents, real estate, immigration, wills, condominium – and much more</p>
@@ -392,12 +398,11 @@
       <p style="font-family: 'Tajawal'; font-size: 1rem; color: #1e293b;">قانون الأسرة، الإيجار، العمل، الحوادث، العقارات، الهجرة، الوصايا، الشقق – والمزيد</p>
       
       <div style="max-width: 500px; margin: 32px auto 0;">
-        <p style="font-weight: 600; margin-bottom: 16px;">📧 Subscribe now – get each guide first | اشترك الآن – كن أول من يحصل على كل دليل</p>
+        <p style="font-weight: 600; margin-bottom: 16px;">اشترك الآن – 📺 Be the first to watch the video and download the PDF guide | كن أول من يشاهد الفيديو ويحمل الدليل</p>
         <input type="text" placeholder="Your name | اسمك" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #cbd5e1; border-radius: 40px;">
         <input type="email" placeholder="Email | البريد الإلكتروني" style="width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #cbd5e1; border-radius: 40px;">
         <button class="btn-primary" style="width: 100%;" onclick="alert('Demo: your email would be saved. No backend yet.')">Subscribe Free | اشترك مجاناً</button>
         <p style="font-size: 12px; margin-top: 12px; color: #5a6874;">Free · No spam · Unsubscribe anytime | مجاني · لا بريد مزعج · إلغاء في أي وقت</p>
-        <p style="margin-top: 16px; font-weight: 500;">📺 Be the first to watch the video and download the PDF guide | كن أول من يشاهد الفيديو ويحمل الدليل</p>
       </div>
     </div>
   </div>
@@ -503,7 +508,7 @@
           <li><a href="#about" style="color: #94a3b8; text-decoration: none;">About</a></li>
           <li><a href="#guides" style="color: #94a3b8; text-decoration: none;">Guides</a></li>
           <li><a href="#course" style="color: #94a3b8; text-decoration: none;">Course</a></li>
-          <li><a href="#power-series" style="color: #94a3b8; text-decoration: none;">Power Series</a></li>
+          <li><a href="#power-series" style="color: #94a3b8; text-decoration: none;">From Home to Parliament</a></li>
         </ul>
       </div>
       <div>
