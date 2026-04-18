@@ -89,12 +89,12 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     text-decoration: none;
   }
-  .logo img { height: 44px; width: auto; }
-  .logo-text .en { font-weight: 700; font-size: 18px; color: white; }
-  .logo-text .ar { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .logo img { height: 56px; width: auto; }
+  .logo-text .en { font-weight: 700; font-size: 20px; color: white; }
+  .logo-text .ar { font-size: 15px; color: rgba(255,255,255,0.75); }
   .nav-links a {
     color: rgba(255,255,255,0.8);
     text-decoration: none;
@@ -134,11 +134,12 @@
   .stat-number { font-size: 2.5rem; font-weight: 800; }
   .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
     gap: 2px;
     background: #e2e8f0;
     border-radius: 12px;
     overflow: hidden;
+    margin-bottom: 32px;
   }
   .pillar-card {
     background: white;
@@ -147,6 +148,54 @@
   }
   .pillar-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
   .pillar-card .ar { font-family: 'Tajawal', system-ui; font-size: 0.85rem; color: #5a6874; }
+  .social-follow {
+    text-align: center;
+    margin-top: 24px;
+    padding: 20px;
+    background: #F1F5F9;
+    border-radius: 48px;
+  }
+  .social-follow p {
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .social-icons a {
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+  .social-icons a:hover {
+    color: var(--red);
+  }
+  .guides-header {
+    text-align: center;
+    margin-bottom: 32px;
+    background: linear-gradient(135deg, #F8FAFE 0%, #E2E8F0 100%);
+    padding: 24px;
+    border-radius: 48px;
+    display: inline-block;
+    width: 100%;
+  }
+  .guides-header h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  .guides-header p {
+    color: #5a6874;
+  }
+  .guides-header svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
   .guides-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
@@ -173,6 +222,20 @@
     padding: 32px;
     border-top: 4px solid var(--red);
   }
+  .course-stats {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+    margin: 24px 0;
+  }
+  .course-stats div {
+    text-align: center;
+  }
+  .course-stats .number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--red);
+  }
   footer {
     background: #0F172A;
     color: #94a3b8;
@@ -184,6 +247,8 @@
     .stats-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
     .nav-links { display: none; }
     .guides-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: repeat(2,1fr); }
+    .guides-header { padding: 16px; }
   }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -193,7 +258,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#home" class="logo">
-      <img src="images/logo.png" alt="Canada Law in Arabic" onerror="this.src='https://placehold.co/44x44?text=CLA'">
+      <img src="images/logo.png" alt="Canada Law in Arabic" onerror="this.src='https://placehold.co/56x56?text=CLA'">
       <div class="logo-text"><div class="en">Canada Law in Arabic</div><div class="ar">قانون كندا بالعربي</div></div>
     </a>
     <div class="nav-links">
@@ -212,13 +277,13 @@
     <div class="hero-grid">
       <div>
         <h1>Your legal rights in Canada — <span class="text-red">in Arabic</span></h1>
-        <p>Canada Law in Arabic Foundation exists so that no Arabic‑speaking Canadian is excluded from legal protection, access to justice, or democratic participation by a language barrier. Free legal education across 12 areas of law, plus civic training on elections, organizing, and accountability – from home to Parliament.</p>
+        <p>Canada Law in Arabic Foundation exists so that no Arabic‑speaking Canadian is excluded from legal protection, access to justice, or democratic participation by a language barrier. Free legal education across 8+ areas of law, plus civic training on elections, organizing, and accountability – from home to Parliament.</p>
         <a href="#guides" class="btn-primary">Explore guides</a>
         <a href="#power-series" class="btn-outline-light" style="margin-left: 12px;">Power series</a>
       </div>
       <div class="hero-ar">
         <h2>حقوقك القانونية في كندا — <span class="text-red">بالعربي</span></h2>
-        <p>مؤسسة قانون كندا بالعربي موجودة لضمان ألا يُستبعد أي ناطق بالعربية من الحماية القانونية أو الوصول إلى العدالة أو المشاركة الديمقراطية بسبب اللغة. نقدم تثقيفاً قانونياً مجانياً في ١٢ مجالاً، وتثقيفاً مدنياً حول الانتخابات والتنظيم والمحاسبة – من البيت إلى البرلمان.</p>
+        <p>مؤسسة قانون كندا بالعربي موجودة لضمان ألا يُستبعد أي ناطق بالعربية من الحماية القانونية أو الوصول إلى العدالة أو المشاركة الديمقراطية بسبب اللغة. نقدم تثقيفاً قانونياً مجانياً في أكثر من ٨ مجالات، وتثقيفاً مدنياً حول الانتخابات والتنظيم والمحاسبة – من البيت إلى البرلمان.</p>
         <a href="#guides" class="btn-primary">استكشف الأدلة</a>
       </div>
     </div>
@@ -227,7 +292,7 @@
 
 <div class="stats-grid">
   <div><div class="stat-number">400+</div><div>Reels</div></div>
-  <div><div class="stat-number">12</div><div>Legal areas</div></div>
+  <div><div class="stat-number">8+</div><div>Legal areas</div></div>
   <div><div class="stat-number">20+</div><div>Guides</div></div>
   <div><div class="stat-number">8+</div><div>Course units</div></div>
   <div><div class="stat-number">600K+</div><div>Arabic speakers in Canada</div></div>
@@ -257,8 +322,8 @@
 <section id="pillars" class="bg-light">
   <div class="container">
     <div style="text-align: center; margin-bottom: 48px;">
-      <h2 style="font-size: 2rem;">12 areas of law that affect your daily life</h2>
-      <p style="color: #5a6874;">١٢ مجالاً قانونياً تؤثر على حياتك اليومية</p>
+      <h2 style="font-size: 2rem;">8+ areas of law that affect your daily life</h2>
+      <p style="color: #5a6874;">أكثر من ٨ مجالات قانونية تؤثر على حياتك اليومية</p>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card"><h3>Family Law</h3><div class="ar">قانون الأسرة</div></div>
@@ -269,19 +334,26 @@
       <div class="pillar-card"><h3>Immigration Law</h3><div class="ar">قانون الهجرة</div></div>
       <div class="pillar-card"><h3>Wills, Estates & Trusts</h3><div class="ar">الوصايا والتركات</div></div>
       <div class="pillar-card"><h3>Condominium Law</h3><div class="ar">قانون الشقق</div></div>
-      <div class="pillar-card"><h3>Consumer Protection</h3><div class="ar">حماية المستهلك</div></div>
-      <div class="pillar-card"><h3>Criminal Law</h3><div class="ar">القانون الجنائي</div></div>
-      <div class="pillar-card"><h3>Business & Commercial Law</h3><div class="ar">القانون التجاري</div></div>
-      <div class="pillar-card"><h3>Taxation Law</h3><div class="ar">قانون الضرائب</div></div>
+    </div>
+
+    <!-- Follow us section (only reels) -->
+    <div class="social-follow">
+      <p>📱 Follow us to see the reels | تابعنا لمشاهدة الريلز</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/canadalawarabic" target="_blank">Instagram</a>
+        <a href="https://tiktok.com/@canadalawarabic" target="_blank">TikTok</a>
+        <a href="https://youtube.com/@canadalawarabic" target="_blank">YouTube</a>
+        <a href="https://facebook.com/canadalawarabic" target="_blank">Facebook</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="guides">
   <div class="container">
-    <div style="text-align: center; margin-bottom: 32px;">
-      <h2 style="font-size: 2rem;">Video + PDF guides (20+ in total)</h2>
-      <p style="color: #5a6874;">أدلة بالصوت والصورة والكتاب – أكثر من ٢٠ دليلاً</p>
+    <div class="guides-header">
+      <h2>🎬 Video + PDF guides (20+ in total)</h2>
+      <p>أدلة بالصوت والصورة والكتاب – أكثر من ٢٠ دليلاً</p>
     </div>
 
     <!-- 4 example guides -->
@@ -315,9 +387,9 @@
     <!-- Merged subscription block -->
     <div id="subscribe-form" style="text-align: center; margin-top: 48px; padding: 40px; background: #F1F5F9; border-radius: 32px;">
       <p style="font-size: 1.2rem; font-weight: 700;">🔥 Coming soon: 20+ more video + PDF guides</p>
-      <p style="font-size: 1rem; color: #1e293b; margin-top: 4px;">Criminal law · Business & contracts · Marketing rules · Taxes · Wills & estates · Immigration · and much more</p>
+      <p style="font-size: 1rem; color: #1e293b; margin-top: 4px;">Family, tenancy, employment, accidents, real estate, immigration, wills, condominium – and much more</p>
       <p style="font-family: 'Tajawal'; font-size: 1.2rem; font-weight: 500; margin: 12px 0 8px;">🔥 قريباً: أكثر من ٢٠ دليلاً بالفيديو والكتاب</p>
-      <p style="font-family: 'Tajawal'; font-size: 1rem; color: #1e293b;">القانون الجنائي · العقود التجارية · قواعد التسويق · الضرائب · الوصايا · الهجرة · والمزيد</p>
+      <p style="font-family: 'Tajawal'; font-size: 1rem; color: #1e293b;">قانون الأسرة، الإيجار، العمل، الحوادث، العقارات، الهجرة، الوصايا، الشقق – والمزيد</p>
       
       <div style="max-width: 500px; margin: 32px auto 0;">
         <p style="font-weight: 600; margin-bottom: 16px;">📧 Subscribe now – get each guide first | اشترك الآن – كن أول من يحصل على كل دليل</p>
@@ -331,7 +403,6 @@
   </div>
 </section>
 
-<!-- UPDATED COURSE SECTION: BILINGUAL LIST -->
 <section id="course" class="bg-light">
   <div class="container">
     <div class="two-columns">
@@ -375,9 +446,10 @@
       </div>
       <div class="dark-card" style="background: var(--blue-dark); color: white;">
         <h3 style="font-family: 'Tajawal'; font-size: 1.8rem; text-align: right; direction: rtl;">دورة مجانية: أساسيات القانون الكندي للمهاجرين</h3>
-        <div style="display: flex; gap: 24px; justify-content: flex-end; margin: 24px 0;">
-          <div><span style="font-size: 2rem; font-weight: 800; color: var(--red);">8+</span><br>وحدات</div>
-          <div><span style="font-size: 2rem; font-weight: 800; color: var(--red);">$0</span><br>مجاناً</div>
+        <div class="course-stats">
+          <div><span class="number">8+</span><br>وحدات</div>
+          <div><span class="number">8+</span><br>ساعات</div>
+          <div><span class="number">$0</span><br>مجاناً</div>
         </div>
         <a href="#subscribe-form" class="btn-primary" style="float: right;">سجّل للوصول المجاني</a>
         <div style="clear: both;"></div>
@@ -422,7 +494,7 @@
           <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Family Law</a></li>
           <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Tenancy Rights</a></li>
           <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Employment Law</a></li>
-          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Criminal Law</a></li>
+          <li><a href="#pillars" style="color: #94a3b8; text-decoration: none;">Real Estate</a></li>
         </ul>
       </div>
       <div>
