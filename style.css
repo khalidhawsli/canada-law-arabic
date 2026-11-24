@@ -38,3 +38,14 @@ footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
 footer strong{color:#fff}
 footer .small{border-top:1px solid #1e293b;margin-top:24px;padding-top:16px;font-size:12px;text-align:center}
 @media(max-width:700px){header.page h1{font-size:1.7rem}.nav-inner{flex-direction:column;align-items:flex-start}}
+
+.follow{background:var(--navy);color:#fff;padding:36px 0;text-align:center}
+.follow h2{color:#fff;margin-bottom:6px}
+.follow p{opacity:.9;margin-bottom:14px}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.social a{background:#fff;color:var(--navy);text-decoration:none;font-weight:600;padding:10px 20px;border-radius:40px;font-size:15px}
+.social a:hover{background:var(--red);color:#fff}
+.vids{display:flex;flex-direction:column;gap:8px;margin:12px 0 6px}
+.vid{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-size:13px;font-weight:600;line-height:1.35}
+.vid img{width:96px;height:54px;flex:0 0 96px;object-fit:cover;border-radius:6px;background:#e2e8f0}
+.watch{display:inline-block;font-size:14px;font-weight:600;color:var(--red);margin-top:4px}
